@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Teakworld Homepage</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f1724",
+                        "accent": "#f97316", // Orange accent as requested
+                        "background-light": "#ffffff",
+                        "background-dark": "#15181d",
+                        "text-main": "#131416",
+                        "text-sub": "#6c737f",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>.scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-main antialiased">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f1f2f3] bg-white/95 backdrop-blur-sm px-6 py-4 md:px-10 dark:border-b-gray-800 dark:bg-background-dark/95">
+<div class="flex items-center gap-4 text-primary dark:text-white">
+<div class="size-8 flex items-center justify-center text-accent">
+<span class="material-symbols-outlined text-[32px]">chair</span>
+</div>
+<h2 class="text-primary dark:text-white text-xl font-bold leading-tight tracking-[-0.015em]">Teakworld</h2>
+</div>
+<nav class="hidden md:flex flex-1 justify-center gap-8">
+<a class="text-text-main dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors text-sm font-medium leading-normal" href="#">Home</a>
+<a class="text-text-main dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors text-sm font-medium leading-normal" href="#">Shop</a>
+<a class="text-text-main dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors text-sm font-medium leading-normal" href="#">Collections</a>
+<a class="text-text-main dark:text-gray-300 hover:text-accent dark:hover:text-accent transition-colors text-sm font-medium leading-normal" href="#">About</a>
+</nav>
+<div class="flex flex-1 justify-end gap-4 md:flex-none">
+<div class="flex items-center gap-2">
+<button class="relative flex size-10 cursor-pointer items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition-colors text-text-main dark:text-white group">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 flex h-5 w-5 items-center justify-center rounded-full bg-accent text-[10px] font-bold text-white shadow-sm">3</span>
+</button>
+<button class="flex md:hidden size-10 cursor-pointer items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-text-main dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</header>
+<main class="flex-1">
+<section class="relative">
+<div class="flex min-h-[600px] flex-col gap-6 bg-cover bg-center bg-no-repeat items-center justify-center p-4 text-center" data-alt="Luxury modern living room with teak furniture" style='background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3-g7ewUNh109j26fEgs-USYfOhvU5fKo6vsuGRVPpYFG7LVdHOrlXrnEGHRRynCiyoRLTP7xduCvfUO2YjJdqCMW9QnqMKd9bjGNLeBawSPcBIu1zapitUW-bZLfr5MrUOCsI8a_GCUYaBjiEw5b50_h80c2e1867EIacma9dHXEjwOjnDT4321DhMD18TeJbwn0vneGdSWXOSNvZbdyyFNZ8TxkN3kwp76Q43tI3HRM2xSnuB3gFzlb5hrAbKnO9sVS4bl9cvVs");'>
+<div class="flex flex-col gap-4 max-w-3xl animate-fade-in-up">
+<h1 class="text-white text-5xl md:text-7xl font-black leading-tight tracking-tight shadow-sm">
+                            Handcrafted <span class="text-accent">Teak</span> Furniture
+                        </h1>
+<h2 class="text-gray-100 text-lg md:text-xl font-medium leading-relaxed max-w-xl mx-auto drop-shadow-md">
+                            Sustainable luxury for your home. Meticulously designed for timeless elegance and durability.
+                        </h2>
+</div>
+<div class="mt-4">
+<button class="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-accent hover:bg-orange-600 transition-all text-white text-base font-bold tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-0.5">
+                            Shop Now
+                        </button>
+</div>
+</div>
+</section>
+<section class="border-b border-gray-100 dark:border-gray-800 bg-white dark:bg-background-dark py-8">
+<div class="container mx-auto px-4">
+<p class="text-center text-sm font-medium text-text-sub mb-6 uppercase tracking-widest">As seen in</p>
+<div class="flex flex-wrap justify-center gap-8 md:gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">apartment</span>
+<span class="font-bold text-xl">VOGUE</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">architecture</span>
+<span class="font-bold text-xl">AD</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">chair_alt</span>
+<span class="font-bold text-xl">ELLE DECOR</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-3xl">cottage</span>
+<span class="font-bold text-xl">DWELL</span>
+</div>
+</div>
+</div>
+</section>
+<section class="py-16 md:py-24 bg-background-light dark:bg-background-dark">
+<div class="container mx-auto px-4 md:px-10">
+<div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
+<div>
+<span class="text-accent font-bold tracking-widest text-sm uppercase mb-2 block">New Arrivals</span>
+<h2 class="text-primary dark:text-white text-3xl md:text-4xl font-bold leading-tight">Featured Products</h2>
+</div>
+<a class="text-primary dark:text-white font-medium hover:text-accent dark:hover:text-accent flex items-center gap-1 transition-colors group" href="#">
+                            View all collection 
+                            <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform text-lg">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
+<div class="group flex flex-col gap-4">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded-xl bg-gray-100">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Modern wooden dining table with chairs" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCe85WeC8mR5dq7Z-u8DEY8SROU3oRpUPh3_KInGh6rSeQEYeLWgY73SRVldptuMnG715a9nyjxOgQsJvfzJQJO7nXUZwwWyhZep0ZCp3so_hgjdgGPz9O_4bJ_sxrmZJw6EYgWmjuWci8okIPw1Xkq_pAnupvDCXJ1YSia9xfz83U6Un3LlbHvb1Q_XtC5D6T8r0LimO3d3YOrQwvxCes-XfhvMnY8d5x5tOQuEk05nK4Yk4UY2DDUi37lVY-3VNvC7DME2fZ2VsM");'></div>
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white p-2 rounded-full shadow-md text-primary hover:text-accent">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="w-full bg-accent hover:bg-orange-600 text-white font-bold py-3 rounded-lg shadow-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<a class="text-primary dark:text-white text-lg font-bold hover:text-accent transition-colors" href="#">Teak Dining Table</a>
+<span class="text-primary dark:text-white font-semibold">$1,200</span>
+</div>
+<p class="text-text-sub text-sm">Solid wood, 6-seater</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded-xl bg-gray-100">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Mid-century modern teak lounge chair" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAElUrbaTonPw3mxxwuVa1LaAFUaxvSvbDbhXc63m1aIltnJiC-x6Cqx9Gx7sOIKgSGQiLQy-lpiSFwF7zHeImCXcPW4uOP-d2oYjlgyHIf2KDhoNCizFdkHKMzjjzArZMwxKwuJbqhngJngThDH0cc4LJDKMj-pU0yjPtPn9I15uXK83s-9Gdc39hkls2v6Za67bwQsIrpYVa29qui8BqNmMDkTKvdbpBu4y0lG7evhMVS9js8Rdvhr6AHLqTq_dY0x7uLuool7NU");'></div>
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white p-2 rounded-full shadow-md text-primary hover:text-accent">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="w-full bg-accent hover:bg-orange-600 text-white font-bold py-3 rounded-lg shadow-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<a class="text-primary dark:text-white text-lg font-bold hover:text-accent transition-colors" href="#">Teak Lounge Chair</a>
+<span class="text-primary dark:text-white font-semibold">$450</span>
+</div>
+<p class="text-text-sub text-sm">Leather upholstery</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded-xl bg-gray-100">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Minimalist round teak coffee table" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA711JN5-OAlrVqcIUOdcQdTZ8gIpBzTdfyiqj1hexVoaA5TlV2xf6vOi4mkBdSBDADfy26sCe9Sjv6cK0Sq0zyRLL1CYEwF6_S2sbIkN0H4-DpWhn4WseIN6iI4vC-mRbGdMOOKO8wXrQvgwTtbGG4b4Tiebtv3-gFrmCo5PgPVXzkU81mizRP_vYd4Kv4-aZEI753abiJp9AcX2QbeSeae3I9SZaYrkRNiDAku4Tr-Zce4EG_sFQR-Wkxtcm-5D0SUC0sqk-7Df0");'></div>
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white p-2 rounded-full shadow-md text-primary hover:text-accent">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="w-full bg-accent hover:bg-orange-600 text-white font-bold py-3 rounded-lg shadow-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<a class="text-primary dark:text-white text-lg font-bold hover:text-accent transition-colors" href="#">Teak Coffee Table</a>
+<span class="text-primary dark:text-white font-semibold">$300</span>
+</div>
+<p class="text-text-sub text-sm">Tempered glass top</p>
+</div>
+</div>
+<div class="group flex flex-col gap-4">
+<div class="relative w-full aspect-[4/5] overflow-hidden rounded-xl bg-gray-100">
+<div class="w-full h-full bg-center bg-cover transition-transform duration-500 group-hover:scale-105" data-alt="Outdoor teak garden bench" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD8SDxktmCwVN0CzAh1MqOMIAVBlAIAXsjY1MXacwYxwu5k49UUgLyosT5xZBcJhV-09l5bptyfH2xAOmm3jwtMJB0F5YqO_hFkePwlRrhmgqUp7jK1VVuPq3AsvDWa7bFDIxOZJpSnpdzkLOK9Bj90yPFSl6b4xNX1DCS8mJW7l7nYi-tsBObv9bhakMmSEP61zLQ3UthdHqCHVinkAN53zNLVoh3g3SK0VOXu5hozb6ByV0bRGVr6Uaz6PcJe6-BoQy4FeesN-2A");'></div>
+<div class="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="bg-white p-2 rounded-full shadow-md text-primary hover:text-accent">
+<span class="material-symbols-outlined text-xl">favorite</span>
+</button>
+</div>
+<div class="absolute inset-x-0 bottom-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+<button class="w-full bg-accent hover:bg-orange-600 text-white font-bold py-3 rounded-lg shadow-lg flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">shopping_bag</span>
+                                        Add to Cart
+                                    </button>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<div class="flex justify-between items-start">
+<a class="text-primary dark:text-white text-lg font-bold hover:text-accent transition-colors" href="#">Teak Garden Bench</a>
+<span class="text-primary dark:text-white font-semibold">$550</span>
+</div>
+<p class="text-text-sub text-sm">Weather resistant</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-20 bg-gray-50 dark:bg-gray-900">
+<div class="container mx-auto px-4 md:px-10">
+<div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+<div class="w-full lg:w-1/2 relative">
+<div class="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+<div class="w-full h-full bg-cover bg-center" data-alt="Carpenter working on wood detail" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB4_t69TcryqvBthDnHM46VqCm41ZXX0JLWPCzmrjQQhx6OqTeGDBvhyajkYoPts2if7ve1T7_e__TBlkDwXL8ktZHQJfwsanEMTPz6-FOYQqsMKy2uvGaFDIuLD94NgxEFZhOZgkRP3uEQjL7SXVxf_O2L2tcz1DrTvLGKBck7c5v7IKrmy9lBLH45dsHOktWciWmSPQu17a9XjieN1O63-RQ5k5bYm9ErN2oI1fCoYPKbDI3P1DCA_qEG0BIVjaEjcBGGSRY9QD8");'></div>
+</div>
+<div class="absolute -bottom-6 -right-6 w-48 h-48 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-xl hidden md:flex flex-col items-center justify-center text-center">
+<span class="text-4xl font-black text-accent">50+</span>
+<span class="text-sm text-text-sub font-medium mt-1">Years of<br/>Excellence</span>
+</div>
+</div>
+<div class="w-full lg:w-1/2 flex flex-col gap-6">
+<span class="text-accent font-bold tracking-widest text-sm uppercase">Our Story</span>
+<h2 class="text-primary dark:text-white text-3xl md:text-5xl font-bold leading-tight">Generations of Craftsmanship</h2>
+<p class="text-text-sub text-lg leading-relaxed">
+                                At Teakworld, we believe that furniture should be more than just functional—it should be a legacy. Sourced from sustainable plantations and handcrafted by master artisans, each piece tells a story of tradition, durability, and natural beauty.
+                            </p>
+<div class="grid grid-cols-2 gap-6 mt-4">
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-accent text-3xl">eco</span>
+<h4 class="font-bold text-primary dark:text-white">Sustainable Sourcing</h4>
+<p class="text-sm text-text-sub">100% certified plantation teak.</p>
+</div>
+<div class="flex flex-col gap-2">
+<span class="material-symbols-outlined text-accent text-3xl">handyman</span>
+<h4 class="font-bold text-primary dark:text-white">Handmade Quality</h4>
+<p class="text-sm text-text-sub">Crafted with precision and care.</p>
+</div>
+</div>
+<div class="mt-4">
+<a class="inline-flex items-center gap-2 text-primary dark:text-white font-bold border-b-2 border-accent pb-1 hover:text-accent transition-colors" href="#">
+                                    Learn more about us
+                                    <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="py-24 bg-primary text-white relative overflow-hidden">
+<div class="absolute inset-0 opacity-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAm1S4aOQX_in6HB3l23k5oNnhkiqmltydpBjyD4oYQKQPIkrgIcf2duX716ZHllP6el2OtIkCDsU9r13g5ER1nwrRJNAxrlOfKJz3J6ZAp1r3BbM3e88NoZZWbkKyLUWh6ZhTUWDud0AAZ6zFz6IsF2p1mdc59kGmO9b4IMFHPNsVds9cxVgJAYNewCUaCYr9xolEh-jlb39o3yB7NFtH2mCXgWo8EOTv0a_rzF06bLZUZlDoFZKvEA231oCmsdnIgiYGbyQ9MZLw");'>
+</div>
+<div class="container mx-auto px-4 md:px-10 relative z-10">
+<div class="flex flex-col items-center text-center max-w-2xl mx-auto gap-6">
+<span class="material-symbols-outlined text-accent text-5xl">mail</span>
+<h2 class="text-3xl md:text-4xl font-bold">Have a custom project in mind?</h2>
+<p class="text-gray-300 text-lg">
+                            We specialize in bespoke furniture pieces tailored to your exact specifications. Let's create something unique together.
+                        </p>
+<form class="w-full mt-6 flex flex-col sm:flex-row gap-3">
+<input class="flex-1 px-5 py-4 rounded-lg bg-white/10 border border-white/20 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent transition-all" placeholder="Enter your email address" type="email"/>
+<button class="bg-accent hover:bg-orange-600 text-white font-bold px-8 py-4 rounded-lg shadow-lg transition-colors whitespace-nowrap">
+                                Get in Touch
+                            </button>
+</form>
+</div>
+</div>
+</section>
+</main>
+<footer class="bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 pt-16 pb-8">
+<div class="container mx-auto px-4 md:px-10">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<div class="flex flex-col gap-4">
+<div class="flex items-center gap-2 text-primary dark:text-white mb-2">
+<span class="material-symbols-outlined text-accent text-2xl">chair</span>
+<span class="text-lg font-bold">Teakworld</span>
+</div>
+<p class="text-text-sub text-sm leading-relaxed">
+                            Crafting premium teak furniture for modern homes since 1985. Experience the difference of true quality.
+                        </p>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-primary dark:text-white font-bold">Shop</h4>
+<a class="text-text-sub hover:text-accent text-sm" href="#">Living Room</a>
+<a class="text-text-sub hover:text-accent text-sm" href="#">Dining Room</a>
+<a class="text-text-sub hover:text-accent text-sm" href="#">Bedroom</a>
+<a class="text-text-sub hover:text-accent text-sm" href="#">Outdoor</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-primary dark:text-white font-bold">Support</h4>
+<a class="text-text-sub hover:text-accent text-sm" href="#">Contact Us</a>
+<a class="text-text-sub hover:text-accent text-sm" href="#">Shipping &amp; Returns</a>
+<a class="text-text-sub hover:text-accent text-sm" href="#">Care Instructions</a>
+<a class="text-text-sub hover:text-accent text-sm" href="#">FAQ</a>
+</div>
+<div class="flex flex-col gap-4">
+<h4 class="text-primary dark:text-white font-bold">Connect</h4>
+<div class="flex gap-4">
+<a class="size-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-text-main dark:text-white hover:bg-accent hover:text-white transition-colors" href="#">
+<span class="font-bold text-xs">IG</span>
+</a>
+<a class="size-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-text-main dark:text-white hover:bg-accent hover:text-white transition-colors" href="#">
+<span class="font-bold text-xs">FB</span>
+</a>
+<a class="size-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 text-text-main dark:text-white hover:bg-accent hover:text-white transition-colors" href="#">
+<span class="font-bold text-xs">PT</span>
+</a>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 dark:border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-text-sub">
+<p>© 2023 Teakworld Inc. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-primary dark:hover:text-white" href="#">Privacy Policy</a>
+<a class="hover:text-primary dark:hover:text-white" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+</body></html>

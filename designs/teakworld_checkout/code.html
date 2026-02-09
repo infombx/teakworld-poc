@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Teakworld Checkout</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f1724",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#15181d",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark text-primary dark:text-white antialiased min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 w-full bg-white/80 dark:bg-background-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-800">
+<div class="max-w-[1280px] mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center justify-between h-16">
+<a class="flex items-center gap-3" href="#">
+<div class="size-8 text-primary dark:text-white">
+<svg class="w-full h-full" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-xl font-bold tracking-tight">Teakworld</span>
+</a>
+<div class="flex items-center gap-2 text-gray-500 dark:text-gray-400 text-sm font-medium">
+<span class="material-symbols-outlined text-[20px]">lock</span>
+<span class="hidden sm:inline">Secure Checkout</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow">
+<div class="lg:grid lg:grid-cols-12 lg:min-h-[calc(100vh-64px)]">
+<div class="lg:col-span-7 xl:col-span-8 bg-white dark:bg-background-dark py-8 px-4 sm:px-6 lg:px-12 lg:py-12 border-r border-gray-100 dark:border-gray-800">
+<div class="max-w-[640px] mx-auto space-y-10">
+<nav class="flex items-center text-sm font-medium text-gray-500 dark:text-gray-400">
+<a class="hover:text-primary dark:hover:text-white transition-colors" href="#">Cart</a>
+<span class="mx-2 material-symbols-outlined text-[16px]">chevron_right</span>
+<span class="text-primary dark:text-white">Checkout</span>
+<span class="mx-2 material-symbols-outlined text-[16px]">chevron_right</span>
+<span>Shipping</span>
+<span class="mx-2 material-symbols-outlined text-[16px]">chevron_right</span>
+<span>Payment</span>
+</nav>
+<section aria-labelledby="contact-heading">
+<div class="flex items-center justify-between mb-4">
+<h2 class="text-xl font-bold text-primary dark:text-white" id="contact-heading">Contact Information</h2>
+<span class="text-sm text-gray-500 dark:text-gray-400">Already have an account? <a class="text-primary dark:text-white underline hover:no-underline font-medium" href="#">Log in</a></span>
+</div>
+<div class="space-y-4">
+<label class="block">
+<span class="sr-only">Email address</span>
+<input class="w-full h-12 px-4 rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark text-primary dark:text-white placeholder-gray-400 focus:border-primary focus:ring-primary dark:focus:ring-white transition shadow-sm" placeholder="Email address" type="email"/>
+</label>
+<label class="flex items-center gap-3 cursor-pointer group">
+<input class="w-5 h-5 rounded border-gray-300 text-primary focus:ring-primary dark:bg-background-dark dark:border-gray-600" type="checkbox"/>
+<span class="text-sm text-gray-600 dark:text-gray-300 group-hover:text-primary dark:group-hover:text-white transition-colors">Email me with news and offers</span>
+</label>
+</div>
+</section>
+<section aria-labelledby="shipping-heading">
+<h2 class="text-xl font-bold text-primary dark:text-white mb-6" id="shipping-heading">Shipping Address</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div class="col-span-2">
+<label class="block">
+<span class="sr-only">Country/Region</span>
+<select class="w-full h-12 px-4 rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark text-primary dark:text-white focus:border-primary focus:ring-primary dark:focus:ring-white transition shadow-sm">
+<option>United States</option>
+<option>Canada</option>
+<option>United Kingdom</option>
+</select>
+</label>
+</div>
+<div>
+<label class="block">
+<span class="sr-only">First name</span>
+<input class="w-full h-12 px-4 rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark text-primary dark:text-white placeholder-gray-400 focus:border-primary focus:ring-primary dark:focus:ring-white transition shadow-sm" placeholder="First name" type="text"/>
+</label>
+</div>
+<div>
+<label class="block">
+<span class="sr-only">Last name</span>
+<input class="w-full h-12 px-4 rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark text-primary dark:text-white placeholder-gray-400 focus:border-primary focus:ring-primary dark:focus:ring-white transition shadow-sm" placeholder="Last name" type="text"/>
+</label>
+</div>
+<div class="col-span-2">
+<label class="block">
+<span class="sr-only">Address</span>
+<input class="w-full h-12 px-4 rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark text-primary dark:text-white placeholder-gray-400 focus:border-primary focus:ring-primary dark:focus:ring-white transition shadow-sm" placeholder="Address" type="text"/>
+</label>
+</div>
+<div class="col-span-2">
+<label class="block">
+<span class="sr-only">Apartment, suite, etc. (optional)</span>
+<input class="w-full h-12 px-4 rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark text-primary dark:text-white placeholder-gray-400 focus:border-primary focus:ring-primary dark:focus:ring-white transition shadow-sm" placeholder="Apartment, suite, etc. (optional)" type="text"/>
+</label>
+</div>
+<div class="md:col-span-1">
+<label class="block">
+<span class="sr-only">City</span>
+<input class="w-full h-12 px-4 rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark text-primary dark:text-white placeholder-gray-400 focus:border-primary focus:ring-primary dark:focus:ring-white transition shadow-sm" placeholder="City" type="text"/>
+</label>
+</div>
+<div class="md:col-span-1">
+<label class="block">
+<span class="sr-only">State</span>
+<select class="w-full h-12 px-4 rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark text-primary dark:text-white focus:border-primary focus:ring-primary dark:focus:ring-white transition shadow-sm text-gray-500">
+<option disabled="" selected="" value="">State</option>
+<option>California</option>
+<option>New York</option>
+<option>Texas</option>
+</select>
+</label>
+</div>
+<div class="md:col-span-1">
+<label class="block">
+<span class="sr-only">ZIP code</span>
+<input class="w-full h-12 px-4 rounded-lg border-gray-300 dark:border-gray-700 bg-white dark:bg-background-dark text-primary dark:text-white placeholder-gray-400 focus:border-primary focus:ring-primary dark:focus:ring-white transition shadow-sm" placeholder="ZIP code" type="text"/>
+</label>
+</div>
+</div>
+</section>
+<section aria-labelledby="method-heading">
+<h2 class="text-xl font-bold text-primary dark:text-white mb-6" id="method-heading">Shipping Method</h2>
+<div class="space-y-3">
+<label class="flex items-center justify-between p-4 rounded-lg border border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-gray-500 cursor-pointer transition-colors bg-white dark:bg-background-dark group">
+<div class="flex items-center gap-4">
+<input checked="" class="w-5 h-5 border-gray-300 text-primary focus:ring-primary dark:bg-background-dark dark:border-gray-600" name="shipping-method" type="radio"/>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-primary dark:text-white">Standard Shipping</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">Curbside delivery (5-7 business days)</span>
+</div>
+</div>
+<span class="font-semibold text-primary dark:text-white">Free</span>
+</label>
+<label class="flex items-center justify-between p-4 rounded-lg border border-gray-300 dark:border-gray-700 hover:border-primary dark:hover:border-gray-500 cursor-pointer transition-colors bg-white dark:bg-background-dark group">
+<div class="flex items-center gap-4">
+<input class="w-5 h-5 border-gray-300 text-primary focus:ring-primary dark:bg-background-dark dark:border-gray-600" name="shipping-method" type="radio"/>
+<div class="flex flex-col">
+<span class="text-sm font-semibold text-primary dark:text-white">White Glove Delivery</span>
+<span class="text-sm text-gray-500 dark:text-gray-400">In-room setup &amp; debris removal</span>
+</div>
+</div>
+<span class="font-semibold text-primary dark:text-white">$199.00</span>
+</label>
+</div>
+</section>
+<div class="pt-6 border-t border-gray-100 dark:border-gray-800 flex flex-col-reverse sm:flex-row items-center justify-between gap-4">
+<a class="text-primary dark:text-white font-medium hover:opacity-70 transition flex items-center gap-1" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        Return to information
+                    </a>
+<button class="w-full sm:w-auto px-8 py-4 bg-primary text-white font-bold rounded-lg shadow-lg hover:bg-gray-800 focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600 transition-all transform active:scale-95 text-lg">
+                        Pay now
+                    </button>
+</div>
+<div class="pt-6 flex flex-wrap gap-4 text-xs text-gray-500 dark:text-gray-400">
+<a class="hover:underline" href="#">Refund Policy</a>
+<a class="hover:underline" href="#">Shipping Policy</a>
+<a class="hover:underline" href="#">Privacy Policy</a>
+<a class="hover:underline" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<div class="lg:col-span-5 xl:col-span-4 bg-background-light dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800 order-first lg:order-last">
+<div class="lg:sticky lg:top-[64px] p-6 sm:p-8 lg:p-12 space-y-8 h-auto lg:h-[calc(100vh-64px)] overflow-y-auto">
+<h2 class="text-xl font-bold text-primary dark:text-white lg:hidden mb-4">Order Summary</h2>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="relative w-20 h-20 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 bg-white flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Minimalist wooden dining table in a bright room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZ6cn0ByQPjdDnjyromUkNqjVdPw7hB0EBoj-4lZZ4bq9Leldf_3fmBnUqrJttkShNQAjk-jV5JIgSF5ePi1SOdt4Zl_UdSI15nR8L4Hz8OtHvcAgXKN0mlAomeg6NuYMvgbYkp-Cs6iEsBAhaJfE6z8YNSLBFca6ne9lwS5Aj36nCXLSJ5-euwVXXS7qhTDtzQ24uh9pCrKltLDKK-nVtU6mnG-nkONJ0AiNkDJxK_Z3mnEGEQnnFRZt7UGrqko25KdUieSKBhRY"/>
+<span class="absolute top-0 right-0 -mr-2 -mt-2 w-5 h-5 rounded-full bg-gray-500 text-white text-xs font-bold flex items-center justify-center z-10 shadow-sm">1</span>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<h3 class="text-sm font-bold text-primary dark:text-white">Teak Dining Table</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400">6 Seater / Natural Finish</p>
+</div>
+<div class="flex flex-col justify-center text-right">
+<span class="text-sm font-bold text-primary dark:text-white">$2,450.00</span>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="relative w-20 h-20 rounded-lg overflow-hidden border border-gray-200 dark:border-gray-700 bg-white flex-shrink-0">
+<img class="w-full h-full object-cover" data-alt="Modern teak wood chair with beige cushion" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjv8TCYVuYs_-MoO-ARBsNEhtkp3QL6nplnvGm4gfb0bJS-LIXeganiH7Lo4EMnx0VayWe1BgEH7sCCqFwC8q-oZ7xlae4L7aM0R1aeYF1TyaoFT4zO16-98OqEgwzi2TMjG1paN4Tm-P-YWeBTIrLqRBb4sQO072trpYOIsoWjyg07iZ8Do_BVkNJ8SuUwBVyM8-EpewJgNmcB__NHLrj-6mvUfbNwTAA1Pcjeh4qC2P8W7pqjRbnzWY86eRVWDQ5x-4gFtB1RVE"/>
+<span class="absolute top-0 right-0 -mr-2 -mt-2 w-5 h-5 rounded-full bg-gray-500 text-white text-xs font-bold flex items-center justify-center z-10 shadow-sm">2</span>
+</div>
+<div class="flex-1 flex flex-col justify-center">
+<h3 class="text-sm font-bold text-primary dark:text-white">Teak Armchair</h3>
+<p class="text-xs text-gray-500 dark:text-gray-400">Set of 2 / Beige Fabric</p>
+</div>
+<div class="flex flex-col justify-center text-right">
+<span class="text-sm font-bold text-primary dark:text-white">$890.00</span>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-800"></div>
+<div class="space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-gray-600 dark:text-gray-400">Subtotal</span>
+<span class="font-medium text-primary dark:text-white">$3,340.00</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-600 dark:text-gray-400">Shipping</span>
+<span class="text-xs text-gray-500 dark:text-gray-500">Calculated at next step</span>
+</div>
+<div class="flex justify-between text-sm">
+<span class="text-gray-600 dark:text-gray-400">Estimated Taxes</span>
+<span class="font-medium text-primary dark:text-white">$267.20</span>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-800"></div>
+<div class="flex justify-between items-center">
+<span class="text-lg font-bold text-primary dark:text-white">Total</span>
+<div class="text-right">
+<span class="text-xs text-gray-500 dark:text-gray-400 block mb-1">USD</span>
+<span class="text-2xl font-bold text-primary dark:text-white">$3,607.20</span>
+</div>
+</div>
+<div class="mt-8 p-4 bg-primary/5 rounded-lg border border-primary/10 flex gap-3 items-start">
+<span class="material-symbols-outlined text-primary text-xl mt-0.5">verified</span>
+<div>
+<h4 class="text-sm font-bold text-primary dark:text-white">Teakworld Guarantee</h4>
+<p class="text-xs text-gray-600 dark:text-gray-400 mt-1">Every piece is handcrafted and inspected before shipping. Includes 5-year structural warranty.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+</body></html>

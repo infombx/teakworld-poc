@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Teakworld Shopping Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0f1724",
+                        "background-light": "#f6f7f7",
+                        "background-dark": "#15181d",
+                        "text-primary": "#131416",
+                        "text-secondary": "#6c737f",
+                    },
+                    fontFamily: {
+                        "sans": ["Inter", "sans-serif"],
+                        "display": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Custom scrollbar for webkit */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d1d5db;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #9ca3af;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-primary dark:text-white antialiased min-h-screen flex flex-col">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full bg-white dark:bg-[#1e232b] border-b border-gray-200 dark:border-gray-800">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Logo & Nav -->
+<div class="flex items-center gap-10">
+<a class="flex items-center gap-3 group" href="#">
+<div class="size-8 text-primary dark:text-white">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-xl font-bold tracking-tight text-primary dark:text-white">Teakworld</span>
+</a>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-text-primary dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors" href="#">Shop</a>
+<a class="text-sm font-medium text-text-primary dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors" href="#">Collections</a>
+<a class="text-sm font-medium text-text-primary dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors" href="#">About</a>
+<a class="text-sm font-medium text-text-primary dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors" href="#">Journal</a>
+</nav>
+</div>
+<!-- Actions -->
+<div class="flex items-center gap-4">
+<div class="relative hidden sm:block">
+<span class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+<span class="material-symbols-outlined text-[20px]">search</span>
+</span>
+<input class="h-10 w-64 rounded-lg bg-gray-100 dark:bg-gray-800 border-none pl-10 pr-4 text-sm focus:ring-2 focus:ring-primary/20 dark:text-white placeholder:text-gray-500" placeholder="Search furniture..." type="text"/>
+</div>
+<button class="flex items-center justify-center size-10 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-text-primary dark:text-white">
+<span class="material-symbols-outlined">person</span>
+</button>
+<button class="flex items-center justify-center size-10 rounded-lg bg-gray-100 dark:bg-gray-800 text-primary dark:text-white relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-primary text-[10px] font-bold text-white">2</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-10">
+<div class="flex flex-col lg:flex-row gap-12">
+<!-- Left Column: Cart Items -->
+<div class="flex-1 w-full lg:w-2/3">
+<div class="flex items-baseline justify-between mb-8">
+<h1 class="text-3xl font-bold tracking-tight text-primary dark:text-white">Your Shopping Cart</h1>
+<span class="text-text-secondary dark:text-gray-400 font-medium">2 Items</span>
+</div>
+<!-- Shipping Alert -->
+<div class="mb-8 rounded-xl bg-primary/5 border border-primary/10 p-4 flex items-center gap-4">
+<div class="p-2 bg-white dark:bg-primary/20 rounded-full shrink-0 text-primary dark:text-white">
+<span class="material-symbols-outlined">local_shipping</span>
+</div>
+<div>
+<p class="text-sm font-medium text-primary dark:text-white">Free shipping on orders over $2,000</p>
+<div class="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-1.5 mt-2 max-w-xs">
+<div class="bg-primary h-1.5 rounded-full" style="width: 60%"></div>
+</div>
+<p class="text-xs text-text-secondary dark:text-gray-400 mt-1">Add <span class="font-bold text-primary dark:text-white">$800.00</span> more to qualify.</p>
+</div>
+</div>
+<!-- Cart Items List -->
+<div class="flex flex-col gap-6">
+<!-- Item 1 -->
+<div class="flex flex-col sm:flex-row gap-6 p-6 bg-white dark:bg-[#1e232b] rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm transition-shadow hover:shadow-md">
+<div class="shrink-0">
+<img alt="Bali Teak Dining Chair" class="w-full sm:size-32 object-cover rounded-lg bg-gray-100 dark:bg-gray-800" data-alt="Wooden chair with intricate backrest design" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBTFmguqE3qRuQK4y3O5Pd7WPyJIwZGXXWd3xEaD5U_S7we2YKlgi5oEo0yqyrJJSKbLkeoNHJ3kq2Hv7U4iQ63w-kdRKSs2PxC_Y_O21SNwFtza7zM__lyXZY79xo36qJO4EmFHHXjJ5GK4BcmgxzfDp_iJ8AiWZgQIm7Hgeupr8z9dHrxDQZ_nJR4fSGGQSkFKF-3-4jkRRomt8jTUTpBpo9WClw4CzrPEyM6RP15nGyxWPtW0z7AUeJ6qL2v7tqSEgiQuS7UxGU"/>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-semibold text-primary dark:text-white leading-tight mb-1">Bali Teak Dining Chair</h3>
+<p class="text-sm text-text-secondary dark:text-gray-400">Natural Finish | Handwoven Seat</p>
+<p class="text-sm text-green-600 dark:text-green-400 font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> In Stock
+                                    </p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-primary dark:text-white">$350.00</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-4 sm:mt-0">
+<div class="flex items-center gap-6">
+<!-- Quantity Stepper -->
+<div class="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg h-9">
+<button class="w-8 h-full flex items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-l-lg transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<input class="w-10 h-full text-center text-sm font-medium border-none p-0 text-primary dark:text-white bg-transparent focus:ring-0" readonly="" type="text" value="2"/>
+<button class="w-8 h-full flex items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-r-lg transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<button class="text-sm text-text-secondary dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 font-medium underline-offset-4 hover:underline transition-colors">Remove</button>
+</div>
+<p class="text-sm font-medium text-text-secondary dark:text-gray-400">Total: <span class="text-primary dark:text-white font-bold">$700.00</span></p>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex flex-col sm:flex-row gap-6 p-6 bg-white dark:bg-[#1e232b] rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm transition-shadow hover:shadow-md">
+<div class="shrink-0">
+<img alt="Teak Garden Bench" class="w-full sm:size-32 object-cover rounded-lg bg-gray-100 dark:bg-gray-800" data-alt="Modern wooden bench in a garden setting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqf7zqBHIDe5S_5gxujbQv429z-0BzfC06Kvhy-pLDhUBUZ3BF11FzGv6UcCXcKbDQ0rAl3jwt6T-7zMQ6cmy-Lx63-FSanbFl8i6ocxEWMi7-evkjCCXuW9rDJvuswDZUmLbj4sbpXhzWV4hXv3tneTsmkrAyTQIZooDGp6G6Qs1tAAOBftkewSvrZcbxQ6LLrKDGRtdj6JEreMMDiO1S7uj3hrnRPuszZ0v9iSX8vlnC0DHy7sJob4ZkISIqYWDa1hVBYIr0Mvc"/>
+</div>
+<div class="flex flex-1 flex-col justify-between">
+<div class="flex justify-between items-start">
+<div>
+<h3 class="text-lg font-semibold text-primary dark:text-white leading-tight mb-1">Teak Garden Bench</h3>
+<p class="text-sm text-text-secondary dark:text-gray-400">Weather-resistant coating | 150cm</p>
+<p class="text-sm text-green-600 dark:text-green-400 font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> In Stock
+                                    </p>
+</div>
+<div class="text-right">
+<p class="text-lg font-bold text-primary dark:text-white">$850.00</p>
+</div>
+</div>
+<div class="flex items-center justify-between mt-4 sm:mt-0">
+<div class="flex items-center gap-6">
+<!-- Quantity Stepper -->
+<div class="flex items-center border border-gray-200 dark:border-gray-700 rounded-lg h-9">
+<button class="w-8 h-full flex items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-l-lg transition-colors">
+<span class="material-symbols-outlined text-[16px]">remove</span>
+</button>
+<input class="w-10 h-full text-center text-sm font-medium border-none p-0 text-primary dark:text-white bg-transparent focus:ring-0" readonly="" type="text" value="1"/>
+<button class="w-8 h-full flex items-center justify-center text-gray-500 hover:text-primary dark:text-gray-400 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-r-lg transition-colors">
+<span class="material-symbols-outlined text-[16px]">add</span>
+</button>
+</div>
+<button class="text-sm text-text-secondary dark:text-gray-400 hover:text-red-600 dark:hover:text-red-400 font-medium underline-offset-4 hover:underline transition-colors">Remove</button>
+</div>
+<p class="text-sm font-medium text-text-secondary dark:text-gray-400">Total: <span class="text-primary dark:text-white font-bold">$850.00</span></p>
+</div>
+</div>
+</div>
+</div>
+<!-- Continue Shopping -->
+<div class="mt-8">
+<a class="inline-flex items-center gap-2 text-sm font-medium text-primary dark:text-white hover:text-opacity-80 transition-opacity" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                        Continue Shopping
+                     </a>
+</div>
+</div>
+<!-- Right Column: Order Summary (Sticky) -->
+<div class="w-full lg:w-1/3">
+<div class="sticky top-28 space-y-6">
+<!-- Summary Card -->
+<div class="bg-white dark:bg-[#1e232b] rounded-xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm">
+<h2 class="text-xl font-bold text-primary dark:text-white mb-6">Order Summary</h2>
+<div class="space-y-4 pb-6 border-b border-gray-100 dark:border-gray-800">
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-secondary dark:text-gray-400">Subtotal</span>
+<span class="font-medium text-primary dark:text-white">$1,550.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-secondary dark:text-gray-400">Shipping Estimate</span>
+<span class="font-medium text-primary dark:text-white">$50.00</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-text-secondary dark:text-gray-400">Tax Estimate</span>
+<span class="font-medium text-primary dark:text-white">$124.00</span>
+</div>
+</div>
+<div class="py-6">
+<div class="flex justify-between items-end mb-1">
+<span class="text-base font-semibold text-primary dark:text-white">Total</span>
+<span class="text-2xl font-bold text-primary dark:text-white">$1,724.00</span>
+</div>
+<p class="text-xs text-text-secondary dark:text-gray-500 text-right">USD</p>
+</div>
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 px-6 rounded-lg shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-2 group">
+                            Proceed to Checkout
+                            <span class="material-symbols-outlined text-[20px] group-hover:translate-x-1 transition-transform">arrow_forward</span>
+</button>
+<div class="mt-6 flex items-center justify-center gap-2 text-xs text-text-secondary dark:text-gray-500">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+                            Secure Checkout with 256-bit SSL
+                        </div>
+</div>
+<!-- Promo Code -->
+<div class="bg-white dark:bg-[#1e232b] rounded-xl border border-gray-200 dark:border-gray-800 p-6 shadow-sm">
+<label class="block text-sm font-medium text-primary dark:text-white mb-3" for="promo">Promo Code</label>
+<div class="flex gap-2">
+<input class="flex-1 rounded-lg border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:ring-2 focus:ring-primary/20 dark:text-white" id="promo" placeholder="Enter code" type="text"/>
+<button class="bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 text-primary dark:text-white font-medium px-4 py-2 rounded-lg text-sm transition-colors">Apply</button>
+</div>
+</div>
+<!-- Support -->
+<div class="bg-primary/5 dark:bg-primary/20 rounded-xl p-6 border border-primary/10">
+<div class="flex gap-4">
+<div class="size-10 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center text-primary dark:text-white shadow-sm shrink-0">
+<span class="material-symbols-outlined">support_agent</span>
+</div>
+<div>
+<h4 class="font-semibold text-primary dark:text-white text-sm">Need Help?</h4>
+<p class="text-xs text-text-secondary dark:text-gray-400 mt-1 mb-2">Our teak experts are here to assist with your order.</p>
+<a class="text-sm font-medium text-primary dark:text-white underline decoration-gray-300 hover:decoration-primary transition-all" href="#">Chat with us</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white dark:bg-[#1e232b] border-t border-gray-200 dark:border-gray-800 mt-auto">
+<div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 py-12">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+<div class="col-span-1 md:col-span-1">
+<div class="flex items-center gap-2 mb-4">
+<div class="size-6 text-primary dark:text-white">
+<svg class="w-full h-full" fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M24 18.4228L42 11.475V34.3663C42 34.7796 41.7457 35.1504 41.3601 35.2992L24 42V18.4228Z" fill="currentColor" fill-rule="evenodd"></path>
+<path clip-rule="evenodd" d="M24 8.18819L33.4123 11.574L24 15.2071L14.5877 11.574L24 8.18819ZM9 15.8487L21 20.4805V37.6263L9 32.9945V15.8487ZM27 37.6263V20.4805L39 15.8487V32.9945L27 37.6263ZM25.354 2.29885C24.4788 1.98402 23.5212 1.98402 22.646 2.29885L4.98454 8.65208C3.7939 9.08038 3 10.2097 3 11.475V34.3663C3 36.0196 4.01719 37.5026 5.55962 38.098L22.9197 44.7987C23.6149 45.0671 24.3851 45.0671 25.0803 44.7987L42.4404 38.098C43.9828 37.5026 45 36.0196 45 34.3663V11.475C45 10.2097 44.2061 9.08038 43.0155 8.65208L25.354 2.29885Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<span class="text-lg font-bold text-primary dark:text-white">Teakworld</span>
+</div>
+<p class="text-sm text-text-secondary dark:text-gray-400">Sustainable, handcrafted teak furniture for the modern home.</p>
+</div>
+<div>
+<h5 class="font-semibold text-primary dark:text-white mb-4">Shop</h5>
+<ul class="space-y-2 text-sm text-text-secondary dark:text-gray-400">
+<li><a class="hover:text-primary dark:hover:text-white" href="#">All Products</a></li>
+<li><a class="hover:text-primary dark:hover:text-white" href="#">New Arrivals</a></li>
+<li><a class="hover:text-primary dark:hover:text-white" href="#">Dining</a></li>
+<li><a class="hover:text-primary dark:hover:text-white" href="#">Living</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-semibold text-primary dark:text-white mb-4">Support</h5>
+<ul class="space-y-2 text-sm text-text-secondary dark:text-gray-400">
+<li><a class="hover:text-primary dark:hover:text-white" href="#">Contact Us</a></li>
+<li><a class="hover:text-primary dark:hover:text-white" href="#">Shipping Policy</a></li>
+<li><a class="hover:text-primary dark:hover:text-white" href="#">Returns</a></li>
+<li><a class="hover:text-primary dark:hover:text-white" href="#">Care Guide</a></li>
+</ul>
+</div>
+<div>
+<h5 class="font-semibold text-primary dark:text-white mb-4">Newsletter</h5>
+<div class="flex gap-2">
+<input class="flex-1 rounded-lg border-gray-200 dark:border-gray-700 bg-gray-50 dark:bg-gray-900 text-sm focus:ring-2 focus:ring-primary/20 dark:text-white" placeholder="Enter your email" type="email"/>
+<button class="bg-primary hover:bg-primary/90 text-white rounded-lg px-4 py-2 text-sm font-medium transition-colors">Join</button>
+</div>
+</div>
+</div>
+<div class="pt-8 border-t border-gray-100 dark:border-gray-800 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-xs text-text-secondary dark:text-gray-500">© 2024 Teakworld Inc. All rights reserved.</p>
+<div class="flex gap-4">
+<span class="text-gray-400 dark:text-gray-600 hover:text-primary dark:hover:text-white cursor-pointer transition-colors">
+<span class="material-symbols-outlined text-[20px]">language</span>
+</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
