@@ -35,10 +35,9 @@ export default function ProductsGridBlock({ block }: ProductsGridBlockProps) {
                 </div>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-10">
-                    {block.products?.map((product) => {
-                        console.log(`[INFO]: ${JSON.stringify(product)} a this stage} `);
-                        return <ProductCard key={product.documentId} product={product} />
-                    })}
+                    {block.products?.map((product) => (
+                      <ProductCard key={product.documentId} product={product} />
+                    ))}
                 </div>
             </div>
         </section>

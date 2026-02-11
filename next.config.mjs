@@ -12,6 +12,10 @@ const nextConfig = {
                 protocol: 'https',
                 hostname: 'images.unsplash.com',
                 pathname: '/**',
+            }, {
+                protocol: 'https',
+                hostname: 'strapi.ecomv2.online',
+                pathname: '/uploads/**',
             },
         ],
     },
