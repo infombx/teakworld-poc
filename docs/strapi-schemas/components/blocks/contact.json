@@ -1,0 +1,21 @@
+{
+    "collectionName": "components_blocks_contacts",
+    "info": {
+        "displayName": "Contact",
+        "icon": "envelope",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "subtitle": {
+            "type": "string"
+        },
+        "buttonText": {
+            "type": "string"
+        }
+    }
+}

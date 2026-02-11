@@ -6,7 +6,7 @@ interface HeroBlockProps {
 }
 
 export default function HeroBlock({ block }: HeroBlockProps) {
-    const backgroundUrl = block.image ? getImageUrl(block.image) : 'https://images.unsplash.com/photo-1618220179428-22790b461013?w=1920&q=80';
+    const backgroundUrl = block.backgroundImage ? getImageUrl(block.backgroundImage) : 'https://images.unsplash.com/photo-1618220179428-22790b461013?w=1920&q=80';
 
     // Split text to highlight "Teak" with gradient
     const renderTitle = () => {
@@ -40,13 +40,13 @@ export default function HeroBlock({ block }: HeroBlockProps) {
                         </h2>
                     )}
                 </div>
-                {block.ctaText && block.ctaLink && (
+                {block.cta && (
                     <div className="mt-4">
                         <Link
-                            href={block.ctaLink}
+                            href={block.cta.href}
                             className="flex min-w-[160px] cursor-pointer items-center justify-center rounded-lg h-12 px-8 bg-accent hover:bg-accent/90 transition-all text-white text-base font-bold tracking-wide shadow-lg hover:shadow-xl hover:-translate-y-0.5"
                         >
-                            {block.ctaText}
+                            {block.cta.text}
                         </Link>
                     </div>
                 )}

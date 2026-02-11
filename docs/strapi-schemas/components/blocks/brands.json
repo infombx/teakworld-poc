@@ -1,0 +1,19 @@
+{
+    "collectionName": "components_blocks_brands",
+    "info": {
+        "displayName": "Brands",
+        "icon": "crown",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "brands": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::brand.brand"
+        }
+    }
+}

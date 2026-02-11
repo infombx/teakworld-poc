@@ -41,14 +41,37 @@ export interface Brand {
 }
 
 // Block Types
+export interface Brand {
+    id: number;
+    attributes: {
+        name: string;
+        logo: {
+            data: StrapiImage;
+        };
+    }
+}
+
+export interface Stat {
+    id: number;
+    label: string;
+    value: string;
+}
+
+export interface LinkElement {
+    id: number;
+    text: string;
+    href: string;
+    isExternal: boolean;
+    icon?: StrapiImage;
+}
+
 export interface HeroBannerBlock {
     __component: 'blocks.hero-banner';
     id: number;
     text: string;
     subtitle?: string;
-    image?: StrapiImage;
-    ctaText?: string;
-    ctaLink?: string;
+    backgroundImage?: StrapiImage;
+    cta?: LinkElement;
 }
 
 export interface BrandsBlock {

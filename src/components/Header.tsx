@@ -2,11 +2,17 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { useState, useEffect } from 'react';
 import { useCartStore } from '@/stores/cartStore';
 
 export default function Header() {
     const { toggleSidebar, getItemCount } = useCartStore();
+    const [mounted, setMounted] = useState(false);
     const itemCount = getItemCount();
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
 
     return (
         <header className="sticky top-0 z-40 bg-primary shadow-lg">
@@ -48,7 +54,7 @@ export default function Header() {
                         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
                         </svg>
-                        {itemCount > 0 && (
+                        {mounted && itemCount > 0 && (
                             <span className="absolute -top-1 -right-1 w-5 h-5 bg-accent text-white text-xs font-bold rounded-full flex items-center justify-center">
                                 {itemCount}
                             </span>

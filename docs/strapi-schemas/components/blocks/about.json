@@ -1,0 +1,33 @@
+{
+    "collectionName": "components_blocks_abouts",
+    "info": {
+        "displayName": "About",
+        "icon": "user",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string",
+            "required": true
+        },
+        "subtitle": {
+            "type": "string"
+        },
+        "content": {
+            "type": "richtext"
+        },
+        "image": {
+            "type": "media",
+            "multiple": false,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "stats": {
+            "type": "component",
+            "repeatable": true,
+            "component": "shared.stat"
+        }
+    }
+}

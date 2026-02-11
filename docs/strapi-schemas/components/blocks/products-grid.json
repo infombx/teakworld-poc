@@ -1,0 +1,22 @@
+{
+    "collectionName": "components_blocks_products_grids",
+    "info": {
+        "displayName": "Products Grid",
+        "icon": "shopping-cart",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "title": {
+            "type": "string"
+        },
+        "subtitle": {
+            "type": "string"
+        },
+        "products": {
+            "type": "relation",
+            "relation": "oneToMany",
+            "target": "api::product.product"
+        }
+    }
+}

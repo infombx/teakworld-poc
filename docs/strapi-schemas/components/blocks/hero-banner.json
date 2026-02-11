@@ -1,0 +1,32 @@
+{
+    "collectionName": "components_blocks_hero_banners",
+    "info": {
+        "displayName": "Hero Banner",
+        "icon": "picture",
+        "description": ""
+    },
+    "options": {},
+    "attributes": {
+        "text": {
+            "type": "string",
+            "required": true
+        },
+        "subtitle": {
+            "type": "string"
+        },
+        "backgroundImage": {
+            "type": "media",
+            "multiple": false,
+            "required": true,
+            "allowedTypes": [
+                "images"
+            ]
+        },
+        "ctaText": {
+            "type": "string"
+        },
+        "ctaLink": {
+            "type": "string"
+        }
+    }
+}

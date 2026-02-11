@@ -1,5 +1,6 @@
+import qs from 'qs';
 import { StrapiPage, StrapiResponse, StrapiImage } from './types';
-import { buildPagePopulateQuery, populateBlocks } from './populateBlocks';
+import { getPagePopulateObject, populateBlocks } from './populateBlocks';
 import { dummyHomePage, dummyShopPage } from './dummyData';
 
 const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337';
@@ -10,8 +11,8 @@ const STRAPI_URL = process.env.NEXT_PUBLIC_STRAPI_URL || 'http://localhost:1337'
 export function getImageUrl(image?: StrapiImage): string {
     if (!image?.url) return '';
 
-    // If URL is already absolute (starts with http or /), return as-is
-    if (image.url.startsWith('http') || image.url.startsWith('/')) {
+    // If URL is already absolute (starts with http), return as-is
+    if (image.url.startsWith('http')) {
         return image.url;
     }
 
@@ -24,8 +25,19 @@ export function getImageUrl(image?: StrapiImage): string {
  */
 export async function fetchPage(slug: string): Promise<StrapiPage | null> {
     try {
-        const populateQuery = buildPagePopulateQuery();
-        const url = `${STRAPI_URL}/api/pages?filters[slug][$eq]=${slug}&${populateQuery}`;
+        const populateObject = getPagePopulateObject();
+        const queryObject = {
+            filters: {
+                slug: {
+                    $eq: slug,
+                },
+            },
+            ...populateObject,
+        };
+
+        const queryString = qs.stringify(queryObject);
+
+        const url = `${STRAPI_URL}/api/pages?${queryString}`;
 
         const res = await fetch(url, {
             next: { revalidate: 60 },

@@ -1,3 +1,4 @@
+import { title } from 'process';
 import { ContentBlock } from './types';
 
 /**
@@ -6,7 +7,7 @@ import { ContentBlock } from './types';
 export function getBlockPopulate(componentName: string): string {
     switch (componentName) {
         case 'blocks.hero-banner':
-            return 'blocks.image';
+            return 'blocks.backgroundImage';
         case 'blocks.brands':
             return 'blocks.brands,blocks.brands.logo';
         case 'blocks.products-grid':
@@ -23,21 +24,72 @@ export function getBlockPopulate(componentName: string): string {
 /**
  * Build the full populate query for fetching a page with all its blocks
  */
-export function buildPagePopulateQuery(): string {
-    // Deep populate for all possible block types
-    const populates = [
-        'blocks',
-        'blocks.image',
-        'blocks.brands',
-        'blocks.brands.logo',
-        'blocks.products',
-        'blocks.products.featuredImage',
-        'blocks.products.images',
-        'blocks.products.product_category',
-        'blocks.stats',
-    ];
+/**
+ * Build the populate object for qs
+ */
+export function getPagePopulateObject() {
+    return {
+        populate: {
+            blocks: {
+                on: {
+                    'blocks.hero-banner': {
+                        populate: {
+                            backgroundImage: {
+                                fields: ['url', 'alternativeText']
+                            },
+                            cta: {
+                                populate: '*'
+                            }
+                        }
+                    },
+                    'blocks.brands': {
+                        populate: {
+                            brands: {
+                                populate: {
+                                    logo: {
+                                        fields: ['url', 'alternativeText']
+                                    }
+                                }
+                            },
+                            /*{
+                                logo: {
+                                    fields: ['url', 'alternativeText']
+                                }
+                            }*/
 
-    return populates.map(p => `populate=${p}`).join('&');
+                        }
+                    },/*
+                    'blocks.products-grid': {
+                        populate: {
+                            products: {
+                                populate: {
+                                    featuredImage: {
+                                        fields: ['url', 'alternativeText']
+                                    },
+                                    product_category: {
+                                        fields: ['name', 'slug']
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    'blocks.about': {
+                        populate: {
+                            image: {
+                                fields: ['url', 'alternativeText']
+                            },
+                            stats: {
+                                populate: '*'
+                            }
+                        }
+                    },
+                    'blocks.contact': {
+                        populate: '*'
+                    }*/
+                }
+            }
+        }
+    };
 }
 
 /**
@@ -49,8 +101,9 @@ export function populateBlockContent<T extends ContentBlock>(block: T): T {
         case 'blocks.hero-banner':
             return {
                 ...block,
-                ctaText: block.ctaText || 'Shop Now',
-                ctaLink: block.ctaLink || '#products',
+                text: block.text || 'Hero Title',
+                subtitle: block.subtitle || 'Hero Subtitle',
+                cta: block.cta || { id: 0, text: 'Shop Now', href: '/shop', isExternal: false },
             } as T;
 
         case 'blocks.brands':
