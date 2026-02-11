@@ -42,7 +42,7 @@ export default function AboutBlock({ block }: AboutBlockProps) {
                             {block.title}
                         </h2>
                         <p className="text-text-sub text-lg leading-relaxed">
-                            {block.content}
+                            {block.content.map((paragraph) => paragraph.children[0].text).join(`\n`)}
                         </p>
 
                         <div className="grid grid-cols-2 gap-6 mt-4">

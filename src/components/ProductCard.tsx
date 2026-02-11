@@ -92,7 +92,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                     </div>
                 </div>
                 {product.description && (
-                    <p className="text-text-sub text-sm">{product.description}</p>
+                    <p className="text-text-sub text-sm">{product.description[0].children[0].text}</p>
                 )}
             </div>
         </div>

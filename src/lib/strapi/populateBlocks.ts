@@ -58,7 +58,7 @@ export function getPagePopulateObject() {
                             }*/
 
                         }
-                    },/*
+                    },
                     'blocks.products-grid': {
                         populate: {
                             products: {
@@ -83,9 +83,9 @@ export function getPagePopulateObject() {
                             }
                         }
                     },
-                    'blocks.contact': {
+                    'blocks.contact-form': {
                         populate: '*'
-                    }*/
+                    }
                 }
             }
         }
@@ -127,7 +127,7 @@ export function populateBlockContent<T extends ContentBlock>(block: T): T {
                 subtitle: block.subtitle || 'Our Story',
             } as T;
 
-        case 'blocks.contact':
+        case 'blocks.contact-form':
             return {
                 ...block,
                 buttonText: block.buttonText || 'Get in Touch',

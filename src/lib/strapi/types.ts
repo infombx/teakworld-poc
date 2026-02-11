@@ -17,7 +17,15 @@ export interface Product {
     id: number;
     documentId: string;
     title: string;
-    description?: string;
+    description?: [
+        {
+            children: [
+                {
+                    text: string;
+                }
+            ]
+        }
+    ];
     price: number;
     PercentageDiscount: number;
     colour?: string;
@@ -94,13 +102,21 @@ export interface AboutBlock {
     id: number;
     title: string;
     subtitle?: string;
-    content: string;
+    content:
+    {
+        children: [
+            {
+                text: string;
+            }
+        ]
+    }[]
+    ;
     image?: StrapiImage;
     stats?: { label: string; value: string }[];
 }
 
 export interface ContactBlock {
-    __component: 'blocks.contact';
+    __component: 'blocks.contact-form';
     id: number;
     title: string;
     subtitle?: string;

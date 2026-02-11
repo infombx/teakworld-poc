@@ -24,7 +24,7 @@ export default function BlockRenderer({ blocks }: BlockRendererProps) {
                         return <ProductsGridBlock key={key} block={block} />;
                     case 'blocks.about':
                         return <AboutBlock key={key} block={block} />;
-                    case 'blocks.contact':
+                    case 'blocks.contact-form':
                         return <ContactBlock key={key} block={block} />;
                     default:
                         console.warn(`Unknown block type: ${(block as ContentBlock).__component}`);
