@@ -15,7 +15,11 @@ const dummyProducts: Product[] = [
         id: 1,
         documentId: 'prod-001',
         title: 'Teak Dining Table',
-        description: 'Handcrafted solid teak dining table',
+        description: [{
+            children:[{
+                text: 'Handcrafted solid teak dining table',
+            }]
+        }],
         price: 2499,
         PercentageDiscount: 0,
         colour: 'Natural',
@@ -30,7 +34,11 @@ const dummyProducts: Product[] = [
         id: 2,
         documentId: 'prod-002',
         title: 'Teak Lounge Chair',
-        description: 'Modern teak lounge chair with cushion',
+        description: [{
+            children:[{
+                text: 'Modern teak lounge chair with cushion',
+            }]
+        }],
         price: 899,
         PercentageDiscount: 15,
         colour: 'Honey',
@@ -45,7 +53,11 @@ const dummyProducts: Product[] = [
         id: 3,
         documentId: 'prod-003',
         title: 'Teak Coffee Table',
-        description: 'Minimalist teak coffee table',
+        description: [{
+            children:[{
+                text: 'Minimalist teak coffee table',
+            }]
+        }],
         price: 749,
         PercentageDiscount: 0,
         colour: 'Dark Walnut',
@@ -60,7 +72,11 @@ const dummyProducts: Product[] = [
         id: 4,
         documentId: 'prod-004',
         title: 'Teak Outdoor Bench',
-        description: 'Weather-resistant outdoor bench',
+        description: [{
+            children:[{
+                text: 'Weather-resistant outdoor bench',
+            }]
+        }],
         price: 1299,
         PercentageDiscount: 10,
         colour: 'Natural',
@@ -79,9 +95,19 @@ const dummyHeroBlock: HeroBannerBlock = {
     id: 1,
     text: 'Handcrafted Teak Furniture',
     subtitle: 'Sustainable luxury for your home. Meticulously designed for timeless elegance and durability.',
-    ctaText: 'Shop Now',
-    ctaLink: '#products',
-    image: {
+    cta: {
+        id: 1,
+        text: 'Shop Now',
+        href: '#products',
+        isExternal: false,
+        icon: {
+            id: 1,
+            documentId: 'test', 
+            url: 'https://images.unsplash.com/photo-1618220179428-22790b461013?w=1920&q=80',
+            alternativeText: 'null'
+        }
+    },
+    backgroundImage: {
         id: 1,
         documentId: 'hero-img',
         url: 'https://images.unsplash.com/photo-1618220179428-22790b461013?w=1920&q=80',
@@ -93,10 +119,14 @@ const dummyBrandsBlock: BrandsBlock = {
     id: 2,
     title: 'As seen in',
     brands: [
-        { id: 1, documentId: 'brand-001', name: 'Simple Life', logo: { id: 1, documentId: 'bl-1', url: '/brands/simple-life-logo-2.svg' } },
-        { id: 2, documentId: 'brand-002', name: 'Rug Culture', logo: { id: 2, documentId: 'bl-2', url: '/brands/rug-culture-logo-2.svg' } },
-        { id: 3, documentId: 'brand-003', name: 'iSleep', logo: { id: 3, documentId: 'bl-3', url: '/brands/isleep-logo-svg.svg' } },
-        { id: 4, documentId: 'brand-004', name: 'Amercook', logo: { id: 4, documentId: 'bl-4', url: '/brands/amercook-logo-2.svg' } },
+        //@ts-ignore
+        { id: 1, documentId: 'brand-001', name: 'Simple Life', logo: { id: 1, documentId: 'bl-1', url: '/brands/simple-life-logo-2.svg', alternativeText: 'null' } },
+        //@ts-ignore
+        { id: 2, documentId: 'brand-002', name: 'Rug Culture', logo: { id: 2, documentId: 'bl-2', url: '/brands/rug-culture-logo-2.svg', alternativeText: 'null' } },
+        //@ts-ignore
+        { id: 3, documentId: 'brand-003', name: 'iSleep', logo: { id: 3, documentId: 'bl-3', url: '/brands/isleep-logo-svg.svg', alternativeText: 'null' } },
+        //@ts-ignore
+        { id: 4, documentId: 'brand-004', name: 'Amercook', logo: { id: 4, documentId: 'bl-4', url: '/brands/amercook-logo-2.svg', alternativeText: 'null' } },
     ],
 };
 
@@ -113,7 +143,16 @@ const dummyAboutBlock: AboutBlock = {
     id: 4,
     title: 'Generations of Craftsmanship',
     subtitle: 'Our Story',
-    content: 'At Teakworld, we believe that furniture should be more than just functional—it should be a legacy. Sourced from sustainable plantations and handcrafted by master artisans, each piece tells a story of tradition, durability, and natural beauty.',
+    
+    content: [
+        {
+        children: [
+            {
+                text: 'At Teakworld, we believe that furniture should be more than just functional—it should be a legacy. Sourced from sustainable plantations and handcrafted by master artisans, each piece tells a story of tradition, durability, and natural beauty.',
+            }
+        ]
+    }
+    ],
     image: {
         id: 5,
         documentId: 'about-img',
@@ -125,7 +164,7 @@ const dummyAboutBlock: AboutBlock = {
 };
 
 const dummyContactBlock: ContactBlock = {
-    __component: 'blocks.contact',
+    __component: 'blocks.contact-form',
     id: 5,
     title: 'Have a custom project in mind?',
     subtitle: 'We specialize in bespoke furniture pieces tailored to your exact specifications. Let\'s create something unique together.',

@@ -57,7 +57,7 @@ export default function CheckoutForm({ onSubmit, isSubmitting }: CheckoutFormPro
         } catch (error) {
             if (error instanceof z.ZodError) {
                 const newErrors: Partial<Record<keyof FormData, string>> = {};
-                error.errors.forEach((err: z.ZodIssue) => {
+                error.issues.forEach((err: z.ZodIssue) => {
                     if (err.path[0]) {
                         newErrors[err.path[0] as keyof FormData] = err.message;
                     }
