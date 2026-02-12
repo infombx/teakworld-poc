@@ -52,7 +52,7 @@ export default function OrderSuccess({ items, total }: OrderSuccessProps) {
                             </div>
                             <div className="text-right">
                                 <span className="text-sm font-bold text-primary">
-                                    ${(item.price * item.quantity).toLocaleString()}
+                                    MUR {(item.price * item.quantity).toLocaleString()}
                                 </span>
                             </div>
                         </div>
@@ -61,7 +61,7 @@ export default function OrderSuccess({ items, total }: OrderSuccessProps) {
                 <div className="border-t border-gray-200 pt-4">
                     <div className="flex justify-between items-center">
                         <span className="text-lg font-bold text-primary">Total</span>
-                        <span className="text-2xl font-bold text-primary">${total.toLocaleString()}</span>
+                        <span className="text-2xl font-bold text-primary">MUR {total.toLocaleString()}</span>
                     </div>
                 </div>
             </div>

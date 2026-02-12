@@ -59,7 +59,7 @@ export default function CartSidebar() {
                                 </div>
                             ) : (
                                 items.map((item) => (
-                                    <div key={item.documentId} className="flex gap-4 p-4 bg-gray-50 rounded-xl">
+                                    <div key={item.cartId} className="flex gap-4 p-4 bg-gray-50 rounded-xl">
                                         <div className="relative w-20 h-20 rounded-lg overflow-hidden bg-gray-100 flex-shrink-0">
                                             <Image
                                                 src={item.image}
@@ -74,12 +74,12 @@ export default function CartSidebar() {
                                                 <p className="text-xs text-text-sub">{item.variant}</p>
                                             )}
                                             <p className="text-sm font-bold text-primary mt-1">
-                                                ${item.price.toLocaleString()}
+                                                MUR {item.price.toLocaleString()}
                                             </p>
                                             <div className="flex items-center gap-3 mt-2">
                                                 <div className="flex items-center border border-gray-200 rounded-lg">
                                                     <button
-                                                        onClick={() => updateQuantity(item.documentId, item.quantity - 1)}
+                                                        onClick={() => updateQuantity(item.cartId, item.quantity - 1)}
                                                         className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-l-lg transition-colors"
                                                     >
                                                         <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -88,7 +88,7 @@ export default function CartSidebar() {
                                                     </button>
                                                     <span className="w-8 text-center text-sm font-medium">{item.quantity}</span>
                                                     <button
-                                                        onClick={() => updateQuantity(item.documentId, item.quantity + 1)}
+                                                        onClick={() => updateQuantity(item.cartId, item.quantity + 1)}
                                                         className="w-8 h-8 flex items-center justify-center hover:bg-gray-100 rounded-r-lg transition-colors"
                                                     >
                                                         <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -97,7 +97,7 @@ export default function CartSidebar() {
                                                     </button>
                                                 </div>
                                                 <button
-                                                    onClick={() => removeItem(item.documentId)}
+                                                    onClick={() => removeItem(item.cartId)}
                                                     className="text-xs text-text-sub hover:text-red-500 transition-colors"
                                                 >
                                                     Remove
@@ -115,7 +115,7 @@ export default function CartSidebar() {
                                 <div className="flex justify-between items-center">
                                     <span className="text-text-sub">Subtotal</span>
                                     <span className="text-xl font-bold text-primary">
-                                        ${getSubtotal().toLocaleString()}
+                                        MUR {getSubtotal().toLocaleString()}
                                     </span>
                                 </div>
                                 <button

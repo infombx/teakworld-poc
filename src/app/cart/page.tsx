@@ -103,7 +103,7 @@ export default function CartPage() {
                                                     </svg>
                                                 </div>
                                                 <div>
-                                                    <p className="text-sm font-medium text-primary">Free shipping on orders over $2,000</p>
+                                                    <p className="text-sm font-medium text-primary">Free shipping on orders over MUR 2,000</p>
                                                     <div className="w-full bg-gray-200 rounded-full h-1.5 mt-2 max-w-xs">
                                                         <div
                                                             className="bg-accent h-1.5 rounded-full transition-all"
@@ -111,7 +111,7 @@ export default function CartPage() {
                                                         />
                                                     </div>
                                                     <p className="text-xs text-text-sub mt-1">
-                                                        Add <span className="font-bold text-primary">${(2000 - subtotal).toLocaleString()}</span> more to qualify.
+                                                        Add <span className="font-bold text-primary">MUR {(2000 - subtotal).toLocaleString()}</span> more to qualify.
                                                     </p>
                                                 </div>
                                             </div>
@@ -120,7 +120,7 @@ export default function CartPage() {
                                         {/* Cart Items */}
                                         <div className="flex flex-col gap-6">
                                             {items.map((item) => (
-                                                <CartItemCard key={item.documentId} item={item} />
+                                                <CartItemCard key={item.cartId} item={item} />
                                             ))}
                                         </div>
 
@@ -149,25 +149,25 @@ export default function CartPage() {
                                             <div className="space-y-4 pb-6 border-b border-gray-100">
                                                 <div className="flex justify-between items-center text-sm">
                                                     <span className="text-text-sub">Subtotal</span>
-                                                    <span className="font-medium text-primary">${subtotal.toLocaleString()}</span>
+                                                    <span className="font-medium text-primary">MUR {subtotal.toLocaleString()}</span>
                                                 </div>
                                                 <div className="flex justify-between items-center text-sm">
                                                     <span className="text-text-sub">Shipping Estimate</span>
                                                     <span className="font-medium text-primary">
-                                                        {shipping === 0 ? 'Free' : `$${shipping.toLocaleString()}`}
+                                                        {shipping === 0 ? 'Free' : `MUR ${shipping.toLocaleString()}`}
                                                     </span>
                                                 </div>
                                                 <div className="flex justify-between items-center text-sm">
                                                     <span className="text-text-sub">Tax Estimate</span>
-                                                    <span className="font-medium text-primary">${tax.toFixed(2)}</span>
+                                                    <span className="font-medium text-primary">MUR {tax.toFixed(2)}</span>
                                                 </div>
                                             </div>
                                             <div className="py-6">
                                                 <div className="flex justify-between items-end mb-1">
                                                     <span className="text-base font-semibold text-primary">Total</span>
-                                                    <span className="text-2xl font-bold text-primary">${total.toFixed(2)}</span>
+                                                    <span className="text-2xl font-bold text-primary">MUR {total.toFixed(2)}</span>
                                                 </div>
-                                                <p className="text-xs text-text-sub text-right">USD</p>
+                                                <p className="text-xs text-text-sub text-right">MUR</p>
                                             </div>
                                             <button
                                                 onClick={handleProceedToCheckout}
@@ -228,7 +228,7 @@ export default function CartPage() {
                                     {/* Items */}
                                     <div className="space-y-4 mb-6">
                                         {items.map((item) => (
-                                            <div key={item.documentId} className="flex gap-4">
+                                            <div key={item.cartId} className="flex gap-4">
                                                 <div className="relative w-16 h-16 rounded-lg overflow-hidden border border-gray-200 bg-white flex-shrink-0">
                                                     <Image
                                                         src={item.image}
@@ -248,7 +248,7 @@ export default function CartPage() {
                                                 </div>
                                                 <div className="flex flex-col justify-center text-right">
                                                     <span className="text-sm font-bold text-primary">
-                                                        ${(item.price * item.quantity).toLocaleString()}
+                                                        MUR {(item.price * item.quantity).toLocaleString()}
                                                     </span>
                                                 </div>
                                             </div>
@@ -258,17 +258,17 @@ export default function CartPage() {
                                     <div className="border-t border-gray-200 pt-4 space-y-3">
                                         <div className="flex justify-between text-sm">
                                             <span className="text-text-sub">Subtotal</span>
-                                            <span className="font-medium text-primary">${subtotal.toLocaleString()}</span>
+                                            <span className="font-medium text-primary">MUR {subtotal.toLocaleString()}</span>
                                         </div>
                                         <div className="flex justify-between text-sm">
                                             <span className="text-text-sub">Shipping</span>
                                             <span className="font-medium text-primary">
-                                                {shipping === 0 ? 'Free' : `$${shipping.toLocaleString()}`}
+                                                {shipping === 0 ? 'Free' : `MUR ${shipping.toLocaleString()}`}
                                             </span>
                                         </div>
                                         <div className="flex justify-between text-sm">
                                             <span className="text-text-sub">Estimated Taxes</span>
-                                            <span className="font-medium text-primary">${tax.toFixed(2)}</span>
+                                            <span className="font-medium text-primary">MUR {tax.toFixed(2)}</span>
                                         </div>
                                     </div>
 
@@ -276,8 +276,8 @@ export default function CartPage() {
                                         <div className="flex justify-between items-center">
                                             <span className="text-lg font-bold text-primary">Total</span>
                                             <div className="text-right">
-                                                <span className="text-xs text-text-sub block mb-1">USD</span>
-                                                <span className="text-2xl font-bold text-primary">${total.toFixed(2)}</span>
+                                                <span className="text-xs text-text-sub block mb-1">MUR</span>
+                                                <span className="text-2xl font-bold text-primary">MUR {total.toFixed(2)}</span>
                                             </div>
                                         </div>
                                     </div>

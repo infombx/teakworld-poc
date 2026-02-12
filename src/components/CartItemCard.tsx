@@ -40,7 +40,7 @@ export default function CartItemCard({ item }: CartItemCardProps) {
                         </p>
                     </div>
                     <div className="text-right">
-                        <p className="text-lg font-bold text-primary">${item.price.toLocaleString()}</p>
+                        <p className="text-lg font-bold text-primary">MUR {item.price.toLocaleString()}</p>
                     </div>
                 </div>
 
@@ -49,7 +49,7 @@ export default function CartItemCard({ item }: CartItemCardProps) {
                         {/* Quantity Stepper */}
                         <div className="flex items-center border border-gray-200 rounded-lg h-9">
                             <button
-                                onClick={() => updateQuantity(item.documentId, item.quantity - 1)}
+                                onClick={() => updateQuantity(item.cartId, item.quantity - 1)}
                                 className="w-8 h-full flex items-center justify-center text-gray-500 hover:text-primary hover:bg-gray-50 rounded-l-lg transition-colors"
                             >
                                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -60,7 +60,7 @@ export default function CartItemCard({ item }: CartItemCardProps) {
                                 {item.quantity}
                             </span>
                             <button
-                                onClick={() => updateQuantity(item.documentId, item.quantity + 1)}
+                                onClick={() => updateQuantity(item.cartId, item.quantity + 1)}
                                 className="w-8 h-full flex items-center justify-center text-gray-500 hover:text-primary hover:bg-gray-50 rounded-r-lg transition-colors"
                             >
                                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -69,14 +69,14 @@ export default function CartItemCard({ item }: CartItemCardProps) {
                             </button>
                         </div>
                         <button
-                            onClick={() => removeItem(item.documentId)}
+                            onClick={() => removeItem(item.cartId)}
                             className="text-sm text-text-sub hover:text-red-600 font-medium underline-offset-4 hover:underline transition-colors"
                         >
                             Remove
                         </button>
                     </div>
                     <p className="text-sm font-medium text-text-sub">
-                        Total: <span className="text-primary font-bold">${(item.price * item.quantity).toLocaleString()}</span>
+                        Total: <span className="text-primary font-bold">MUR {(item.price * item.quantity).toLocaleString()}</span>
                     </p>
                 </div>
             </div>

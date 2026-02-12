@@ -1,0 +1,37 @@
+{
+    "api": {
+        "contact-form": {
+            "schema": {
+                "kind": "collectionType",
+                "collectionName": "contact_submissions",
+                "info": {
+                    "singularName": "contact-submission",
+                    "pluralName": "contact-submissions",
+                    "displayName": "Contact Submission",
+                    "description": "Contact form submissions from users"
+                },
+                "options": {
+                    "draftAndPublish": false
+                },
+                "attributes": {
+                    "fullName": {
+                        "type": "string",
+                        "required": true
+                    },
+                    "email": {
+                        "type": "email",
+                        "required": true
+                    },
+                    "message": {
+                        "type": "text",
+                        "required": true
+                    },
+                    "submittedAt": {
+                        "type": "datetime",
+                        "default": "now"
+                    }
+                }
+            }
+        }
+    }
+}

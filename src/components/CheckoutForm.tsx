@@ -107,7 +107,7 @@ export default function CheckoutForm({ onSubmit, isSubmitting }: CheckoutFormPro
             <section>
                 <h2 className="text-xl font-bold text-primary mb-6 font-display">Shipping Address</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="col-span-2">
+                    <div className="col-span-full md:col-span-2">
                         <select
                             name="country"
                             value={formData.country}
@@ -143,7 +143,7 @@ export default function CheckoutForm({ onSubmit, isSubmitting }: CheckoutFormPro
                         />
                         {errors.lastName && <p className="mt-1 text-sm text-red-500">{errors.lastName}</p>}
                     </div>
-                    <div className="col-span-2">
+                    <div className="col-span-full md:col-span-2">
                         <input
                             type="text"
                             name="address"
@@ -155,7 +155,7 @@ export default function CheckoutForm({ onSubmit, isSubmitting }: CheckoutFormPro
                         />
                         {errors.address && <p className="mt-1 text-sm text-red-500">{errors.address}</p>}
                     </div>
-                    <div className="col-span-2">
+                    <div className="col-span-full md:col-span-2">
                         <input
                             type="text"
                             name="apartment"
@@ -241,7 +241,7 @@ export default function CheckoutForm({ onSubmit, isSubmitting }: CheckoutFormPro
                                 <span className="text-sm text-text-sub">In-room setup & debris removal</span>
                             </div>
                         </div>
-                        <span className="font-semibold text-primary">$199.00</span>
+                        <span className="font-semibold text-primary">MUR 199.00</span>
                     </label>
                 </div>
             </section>

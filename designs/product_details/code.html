@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Teakworld Product Details</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1a1d23",
+                        "background-light": "#f7f7f7",
+                        "background-dark": "#17181b",
+                        "accent": "#01646D",
+                        "surface": "#252932",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "2xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark text-slate-800 dark:text-gray-100 font-display min-h-screen pb-24 lg:pb-0">
+    <header
+        class="fixed top-0 w-full z-50 bg-white/80 dark:bg-primary/90 backdrop-blur-md border-b border-gray-200 dark:border-white/5 transition-colors">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center gap-4">
+                    <button class="p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                        <span class="material-icons text-2xl">arrow_back</span>
+                    </button>
+                    <a class="text-xl font-bold tracking-tight text-primary dark:text-white uppercase"
+                        href="#">Teakworld</a>
+                </div>
+                <div class="flex items-center gap-2">
+                    <button class="relative p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                        <span class="material-icons text-2xl">shopping_bag</span>
+                        <span class="absolute top-1.5 right-1.5 w-2 h-2 bg-accent rounded-full"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="pt-20 lg:pt-24 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="lg:grid lg:grid-cols-2 lg:gap-12 xl:gap-16 pb-12">
+            <div class="space-y-4">
+                <div
+                    class="relative group w-full aspect-[4/5] sm:aspect-square lg:aspect-[4/5] overflow-hidden rounded-[20px] bg-gray-200 dark:bg-surface shadow-xl border border-white/5">
+                    <img alt="Mid-century modern teak lounge chair with grey upholstery"
+                        class="w-full h-full object-cover object-center transform transition duration-700 group-hover:scale-105"
+                        data-alt="Mid-century modern teak lounge chair with grey upholstery"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6p0M7-gt56M0DiP2tYow_n8Sb7KR56aUoXaEeyO4s5-xZgbrifsgWLkOJwqZjlKU42ZfpbHwHIvimoQ7VThOC-9RrzYsPB9NFWdG9N5E54qD1bsdwnoTUKuTMDIgCTlPNnealJP4MUpKI2QgBF97Zdk0IcDOrTx_Jvpa_Ko5s2wzI68FkP07zAxWxAF_3EeuUIXQ2ZErtnsoqX99s8TmUNKTG8aowduOvdAGjt6IJA1dXKmWuS-NAI5flucTtKT5oNc_MRvEHt9EF" />
+                    <div
+                        class="absolute top-4 left-4 bg-accent text-white font-bold text-xs px-3 py-1.5 rounded-full uppercase tracking-wider">
+                        New Arrival
+                    </div>
+                    <button
+                        class="absolute top-4 right-4 p-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/40 transition-colors">
+                        <span class="material-icons text-xl">favorite_border</span>
+                    </button>
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+                        <div class="w-2 h-2 rounded-full bg-white shadow-sm"></div>
+                        <div class="w-2 h-2 rounded-full bg-white/50 shadow-sm"></div>
+                        <div class="w-2 h-2 rounded-full bg-white/50 shadow-sm"></div>
+                        <div class="w-2 h-2 rounded-full bg-white/50 shadow-sm"></div>
+                    </div>
+                </div>
+                <div class="hidden sm:grid grid-cols-4 gap-4 mt-4">
+                    <button
+                        class="relative aspect-square rounded-xl overflow-hidden ring-2 ring-accent ring-offset-2 ring-offset-background-light dark:ring-offset-background-dark">
+                        <img alt="Front view of teak chair" class="w-full h-full object-cover"
+                            data-alt="Front view of teak chair"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCGV2S37lSqwwginYe_kwek2J01EYD7-iejv6O9mz52bPtaHP7YpNchN0k_JGuj5fDXrz-1v_whZsmCuQ3GOb4wWJNzUvoRm7rSSeUfvbXZdibz9DKt_OF80Ci4YDsOmHmU8Ub-reYB6VTs5KIQ4IZXgynHQUOs3w3B62D0aAuAOftzyoBmVOrL6AAphCcp8EKTouWHoqpB6EWv7T7GkKtjRt3E2cDKgoSTSSMYQCe3LSlDzk5vRLkFn6XmG80OHExZOT3w8KIo6BFv" />
+                    </button>
+                    <button
+                        class="relative aspect-square rounded-xl overflow-hidden opacity-70 hover:opacity-100 transition-opacity">
+                        <img alt="Side profile of teak chair" class="w-full h-full object-cover"
+                            data-alt="Side profile of teak chair"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD8VJdSAaHyCjsMDY112LQR44hcHSMaz3LHzKmbTEXuBeDv3L8qWrrD8nma7rt2Y63jVfk1Q4DNphd37kHoMqdvusizXEQP_M-VJ1bposBTkxohl6ucvNPdkJaHI4g1d8tH582jcgP93yGa6sM-q7gpqkD70YtdtAXQc_asqPjCZuvj6UIaGnCmzcEQCp_6iEB0coLiSsk12GugMyydtlmQoqnJYMAhxZQAR7BpkHrGrc2glSLsLT-vhEMlWKTNjHDqO3aAQaFdSN_9" />
+                    </button>
+                    <button
+                        class="relative aspect-square rounded-xl overflow-hidden opacity-70 hover:opacity-100 transition-opacity">
+                        <img alt="Detail shot of wood grain" class="w-full h-full object-cover"
+                            data-alt="Detail shot of wood grain"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4dHfBZxcNVe54iZlsj4CUNy2ove9WJHvSyrkaKaMWfENY-28GR0T_VVXR5YIvSkEzPEFxfDq3U6WWXv-jZoQJ-BG3CS3awt-3N1ojszV9zRG5aS5dpqEaqyrlQEP1KpeoDT-qfqMWrB2-R5wfjlmKmjLDDza8zxRwAKP8TzhZ83he53tItrxEIwvbMubPC6YMDQFGtsaOKco9IUT0to5sabbB0pt0bcVlpOIIcKqTLOOek3Q-falkNeD4oSzfDxzCa-LkJPzF_aDN" />
+                    </button>
+                    <button
+                        class="relative aspect-square rounded-xl overflow-hidden opacity-70 hover:opacity-100 transition-opacity flex items-center justify-center bg-gray-200 dark:bg-surface">
+                        <span class="material-icons text-gray-400">play_circle</span>
+                    </button>
+                </div>
+            </div>
+            <div class="mt-8 lg:mt-0 flex flex-col h-full">
+                <div class="mb-6">
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h1 class="text-3xl sm:text-4xl font-bold text-primary dark:text-white leading-tight mb-4">
+                                Mid-Century Teak Lounge Chair</h1>
+                        </div>
+                    </div>
+                    <p class="text-2xl font-bold text-accent">$450.00 <span
+                            class="text-lg font-normal text-gray-500 dark:text-gray-500 line-through ml-2">$520.00</span>
+                    </p>
+                </div>
+                <div class="w-full h-px bg-gray-200 dark:bg-white/10 mb-8"></div>
+                <div class="space-y-8 flex-grow">
+                    <div>
+                        <h3 class="text-sm font-semibold text-gray-900 dark:text-gray-200 mb-3 uppercase tracking-wide">
+                            Wood Finish</h3>
+                        <div class="flex items-center gap-3">
+                            <button aria-label="Natural Teak"
+                                class="w-12 h-12 rounded-full bg-[#8B5A2B] ring-2 ring-offset-2 ring-accent ring-offset-background-light dark:ring-offset-background-dark shadow-sm"></button>
+                            <button aria-label="Dark Walnut"
+                                class="w-12 h-12 rounded-full bg-[#4A3728] ring-1 ring-white/10 hover:ring-2 hover:ring-offset-2 hover:ring-accent hover:ring-offset-background-light dark:hover:ring-offset-background-dark transition-all"></button>
+                            <button aria-label="Light Oak"
+                                class="w-12 h-12 rounded-full bg-[#D7C4A8] ring-1 ring-white/10 hover:ring-2 hover:ring-offset-2 hover:ring-accent hover:ring-offset-background-light dark:hover:ring-offset-background-dark transition-all"></button>
+                        </div>
+                        <p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Selected: <span
+                                class="font-medium text-gray-900 dark:text-gray-200">Natural Teak</span></p>
+                    </div>
+                    <div class="space-y-4">
+                        <details class="group border-b border-gray-200 dark:border-white/10 pb-4" open="">
+                            <summary
+                                class="flex justify-between items-center font-medium cursor-pointer list-none text-gray-900 dark:text-gray-100">
+                                <span>Description</span>
+                                <span class="transition group-open:rotate-180">
+                                    <span class="material-icons">expand_more</span>
+                                </span>
+                            </summary>
+                            <div
+                                class="text-gray-600 dark:text-gray-400 mt-3 group-open:animate-fadeIn leading-relaxed text-sm">
+                                Handcrafted from sustainable Grade-A teak, this lounge chair features clean lines and a
+                                low profile that embodies the mid-century modern aesthetic. The cushions are upholstered
+                                in a durable, stain-resistant linen blend. Perfect for reading corners or living room
+                                accents.
+                            </div>
+                        </details>
+                        <details class="group border-b border-gray-200 dark:border-white/10 pb-4">
+                            <summary
+                                class="flex justify-between items-center font-medium cursor-pointer list-none text-gray-900 dark:text-gray-100">
+                                <span>Dimensions &amp; Specs</span>
+                                <span class="transition group-open:rotate-180">
+                                    <span class="material-icons">expand_more</span>
+                                </span>
+                            </summary>
+                            <div class="text-gray-600 dark:text-gray-400 mt-3 group-open:animate-fadeIn text-sm">
+                                <ul class="space-y-1">
+                                    <li class="flex justify-between"><span>Height</span> <span>32 in</span></li>
+                                    <li class="flex justify-between"><span>Width</span> <span>28 in</span></li>
+                                    <li class="flex justify-between"><span>Depth</span> <span>30 in</span></li>
+                                    <li class="flex justify-between"><span>Weight</span> <span>24 lbs</span></li>
+                                </ul>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                <div class="h-24 lg:h-0"></div>
+            </div>
+        </div>
+        <div class="mt-12 lg:mt-0 pb-12 border-t border-gray-200 dark:border-white/10 pt-12">
+            <h2 class="text-2xl font-bold mb-6 text-primary dark:text-white">Complete the Look</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <a class="group block" href="#">
+                    <div class="aspect-square rounded-lg overflow-hidden bg-gray-200 dark:bg-surface mb-3 relative">
+                        <img alt="Small round teak side table"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            data-alt="Small round teak side table"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC11Y2taq3cb_BC_uV72AQanpMdxAc9tPIy_tzGDwbvof9Q4wd6tI6_qXR2v_Y9vXuYKqflrhkQVBndYH6CAuvA-7dxZ03gOWgCCGH-Ean0lwLvcRuSiL3Ii1SVhj20nR7_AKhMxb__13QsX82gY2zuLgXhTtzpvohAqmkbEu58PkvR7c_soxA_rBN_TOOjxMRdCg8Mv_4xpHEelXvH05JcMLAszfGvFJQru4AgWSOv2r8hYmi2UpzlLTSAVRdQEJpzpPwJRGxaCtYZ" />
+                        <div
+                            class="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">
+                            $120</div>
+                    </div>
+                    <h3 class="text-sm font-medium text-gray-900 dark:text-white truncate">Teak Side Table</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">Living Room</p>
+                </a>
+                <a class="group block" href="#">
+                    <div class="aspect-square rounded-lg overflow-hidden bg-gray-200 dark:bg-surface mb-3 relative">
+                        <img alt="Cream colored sofa"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            data-alt="Cream colored sofa"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeI0mQJVdgYsTrOZJz5xhaVcRGyAKQHayFPcsQBS5HMJGpIBXXB1OArNsKiMX85yVGkSuktqCTNbe3TueGkkadrkVWYfFpMXS2e-S31VdSRGIePi6-ofHSWfAaq3tbGQJNTUrax-ijs4ixPaD5dtpUNuwC9laDSewm_okQl101KytCK4_CDOFDw_HeHixGcrZlR3tOl7pOV9oWictJXvaopjGMGp--9kP1Dgf3ajVmKQaFARizARaMnd8Us-j3XNqB2--QvBFS5e0j" />
+                        <div
+                            class="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">
+                            $899</div>
+                    </div>
+                    <h3 class="text-sm font-medium text-gray-900 dark:text-white truncate">Modular Sofa</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">Living Room</p>
+                </a>
+                <a class="group block hidden md:block" href="#">
+                    <div class="aspect-square rounded-lg overflow-hidden bg-gray-200 dark:bg-surface mb-3 relative">
+                        <img alt="Modern floor lamp"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            data-alt="Modern floor lamp"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAV9lHlaSv0ORcku6XwOp7C07uulQHNx7cTTGNjUaCdPZCAF4BozKD7-xXWvl8pSGUbZLhrqMf7zz_PGwtVB4-gta7AKW06idAK2SS15ADk6XNaverbqPQgzOML7EpIv7_Tt8TWSdIMz5jWu8tFqgrsVrfVTQtgGC3MlEj6_Dbez39pe95zuuPrGNfQ272Cp9ud8ccozwT3HfAb2RWXF7Pq3syfwG7QmmEM7W1cwNsjBIU8_iN5GLcjNzm7thPSGbbBzDoAiKaR1apg" />
+                        <div
+                            class="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">
+                            $150</div>
+                    </div>
+                    <h3 class="text-sm font-medium text-gray-900 dark:text-white truncate">Arc Floor Lamp</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">Lighting</p>
+                </a>
+                <a class="group block hidden md:block" href="#">
+                    <div class="aspect-square rounded-lg overflow-hidden bg-gray-200 dark:bg-surface mb-3 relative">
+                        <img alt="Geometric wool rug"
+                            class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+                            data-alt="Geometric wool rug"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoVGAHN7T3Yjor_8oSRIO-iCc_E17dWiVvlBVb2kBG4kwa8gqU6epQN2YwMgSS5wLt4CzF9hDwKwO9FAC2nZl2y2WixBqFdMTto5PTHPueTSgDMB-vaFNymbk7tYMdtanZLof3HYEGXK5hv8FZx1rnw8wRTqwzXy3R4N7mwax7oKEPicN6aWbxbOqDppp3RMtHZ4Om16_Fe0BNmHgNUlgT0V1sHrB6wbCjrcSb8r9ZTZ0Rhef8-nIiVL72oOlDOo5prFajeUtLuoTk" />
+                        <div
+                            class="absolute bottom-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded backdrop-blur-sm">
+                            $299</div>
+                    </div>
+                    <h3 class="text-sm font-medium text-gray-900 dark:text-white truncate">Wool Area Rug</h3>
+                    <p class="text-xs text-gray-500 dark:text-gray-400">Textiles</p>
+                </a>
+            </div>
+        </div>
+    </main>
+    <div
+        class="fixed bottom-0 left-0 right-0 p-4 bg-white dark:bg-primary border-t border-gray-200 dark:border-white/5 z-40 lg:relative lg:bg-transparent lg:border-none lg:p-0 lg:hidden">
+        <div class="flex gap-4 items-center max-w-7xl mx-auto">
+            <div class="flex items-center border border-gray-300 dark:border-white/10 rounded-lg h-12">
+                <button
+                    class="w-10 h-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-white transition">
+                    <span class="material-icons text-base">remove</span>
+                </button>
+                <input
+                    class="w-8 h-full bg-transparent text-center text-sm font-semibold border-none focus:ring-0 p-0 text-primary dark:text-white"
+                    readonly="" type="text" value="1" />
+                <button
+                    class="w-10 h-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-white transition">
+                    <span class="material-icons text-base">add</span>
+                </button>
+            </div>
+            <button
+                class="flex-1 bg-accent hover:opacity-90 text-white font-bold h-12 rounded-lg shadow-lg shadow-accent/20 flex items-center justify-center gap-2 transition-all active:scale-[0.98]">
+                <span>Add to Cart</span>
+                <span class="material-icons text-sm">arrow_forward</span>
+            </button>
+        </div>
+    </div>
+    <script>
+        const mainContent = document.querySelector('main .lg\\:grid .flex-col');
+        const desktopCTA = document.createElement('div');
+        desktopCTA.className = 'hidden lg:flex gap-4 pt-8 mt-auto';
+        desktopCTA.innerHTML = `
+             <div class="flex items-center border border-gray-300 dark:border-white/10 rounded-lg h-14 bg-white dark:bg-surface">
+                <button class="w-12 h-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-white transition">
+                    <span class="material-icons">remove</span>
+                </button>
+                <input type="text" value="1" class="w-12 h-full bg-transparent text-center text-lg font-semibold border-none focus:ring-0 p-0 text-primary dark:text-white" readonly>
+                <button class="w-12 h-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-white transition">
+                    <span class="material-icons">add</span>
+                </button>
+            </div>
+            <button class="flex-1 bg-accent hover:opacity-90 text-white text-lg font-bold h-14 rounded-lg shadow-lg shadow-accent/20 flex items-center justify-center gap-2 transition-all hover:translate-y-[-2px]">
+                <span>Add to Cart</span>
+                <span class="material-icons">shopping_cart</span>
+            </button>
+            <button class="h-14 w-14 rounded-lg border border-gray-300 dark:border-white/10 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-white/5 transition-colors">
+                 <span class="material-icons text-gray-500 dark:text-gray-400">favorite_border</span>
+            </button>
+        `;
+        mainContent.appendChild(desktopCTA);
+    </script>
+
+</body>
+
+</html>

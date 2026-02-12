@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import { useCartStore } from '@/stores/cartStore';
 
 export default function Header() {
@@ -15,7 +16,7 @@ export default function Header() {
     }, []);
 
     return (
-        <header className="sticky top-0 z-40 bg-primary shadow-lg">
+        <header className="sticky top-0 z-40 transition-all duration-300 bg-primary shadow-lg">
             <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}

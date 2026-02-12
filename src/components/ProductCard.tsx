@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import Link from 'next/link';
 import { useCartStore } from '@/stores/cartStore';
 import { Product, getImageUrl } from '@/lib/strapi';
 
@@ -11,7 +12,8 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
     const addItem = useCartStore((state) => state.addItem);
 
-    const handleAddToCart = () => {
+    const handleAddToCart = (e: React.MouseEvent) => {
+        e.preventDefault(); // Prevent navigation when clicking add to cart
         const imageUrl = product.featuredImage
             ? getImageUrl(product.featuredImage)
             : 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80';
@@ -25,8 +27,8 @@ export default function ProductCard({ product }: ProductCardProps) {
         });
     };
 
-    const discountedPrice = product.PercentageDiscount > 0
-        ? product.price * (1 - product.PercentageDiscount / 100)
+    const discountedPrice = product.percentageDiscount > 0
+        ? product.price * (1 - product.percentageDiscount / 100)
         : null;
 
     const imageUrl = product.featuredImage
@@ -34,7 +36,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         : 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80';
 
     return (
-        <div className="group flex flex-col gap-4">
+        <Link href={`/products/${product.documentId}`} className="group flex flex-col gap-4">
             <div className="relative w-full aspect-[4/5] overflow-hidden rounded-xl bg-gray-100">
                 <Image
                     src={imageUrl}
@@ -45,7 +47,10 @@ export default function ProductCard({ product }: ProductCardProps) {
 
                 {/* Favorite button */}
                 <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
-                    <button className="bg-white p-2 rounded-full shadow-md text-primary hover:text-accent transition-colors">
+                    <button
+                        onClick={(e) => e.preventDefault()}
+                        className="bg-white p-2 rounded-full shadow-md text-primary hover:text-accent transition-colors"
+                    >
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                             <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
                         </svg>
@@ -53,10 +58,10 @@ export default function ProductCard({ product }: ProductCardProps) {
                 </div>
 
                 {/* Discount badge */}
-                {product.PercentageDiscount > 0 && (
+                {product.percentageDiscount > 0 && (
                     <div className="absolute top-3 left-3">
                         <span className="bg-accent text-white text-xs font-bold px-2 py-1 rounded">
-                            -{product.PercentageDiscount}%
+                            -{product.percentageDiscount}%
                         </span>
                     </div>
                 )}
@@ -82,12 +87,12 @@ export default function ProductCard({ product }: ProductCardProps) {
                     </h3>
                     <div className="text-right">
                         {discountedPrice ? (
-                            <>
-                                <span className="text-primary font-semibold">${discountedPrice.toLocaleString()}</span>
-                                <span className="text-text-sub text-sm line-through ml-2">${product.price.toLocaleString()}</span>
-                            </>
+                            <div className="flex items-center">
+                                <span className="text-primary font-semibold">MUR {discountedPrice.toLocaleString()}</span>
+                                <span className="text-text-sub text-sm line-through ml-2">MUR {product.price.toLocaleString()}</span>
+                            </div>
                         ) : (
-                            <span className="text-primary font-semibold">${product.price.toLocaleString()}</span>
+                            <span className="text-primary font-semibold">MUR {product.price.toLocaleString()}</span>
                         )}
                     </div>
                 </div>
@@ -95,6 +100,6 @@ export default function ProductCard({ product }: ProductCardProps) {
                     <p className="text-text-sub text-sm">{product.description[0].children[0].text}</p>
                 )}
             </div>
-        </div>
+        </Link>
     );
 }

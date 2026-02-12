@@ -16,18 +16,27 @@ const dummyProducts: Product[] = [
         documentId: 'prod-001',
         title: 'Teak Dining Table',
         description: [{
-            children:[{
-                text: 'Handcrafted solid teak dining table',
+            type: 'paragraph',
+            children: [{
+                type: 'text',
+                text: 'Handcrafted solid teak dining table with natural finish. Perfect for family gatherings and elegant dining experiences.',
             }]
         }],
         price: 2499,
-        PercentageDiscount: 0,
-        colour: 'Natural',
+        percentageDiscount: 0,
+        measurement: '180 x 90 x 75 cm',
+        stock: 12,
+        SKU: 'TBL-001',
+        colour: [{ name: 'Natural' }, { name: 'Dark Walnut' }],
         featuredImage: {
             id: 1,
             documentId: 'img-001',
             url: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80',
         },
+        images: [
+            { id: 1, documentId: 'img-001', url: 'https://images.unsplash.com/photo-1617806118233-18e1de247200?w=600&q=80' },
+            { id: 11, documentId: 'img-001b', url: 'https://images.unsplash.com/photo-1615066390971-03e4e1c36ddf?w=600&q=80' },
+        ],
         product_category: { id: 1, documentId: 'cat-001', name: 'Dining', slug: 'dining' },
     },
     {
@@ -35,18 +44,26 @@ const dummyProducts: Product[] = [
         documentId: 'prod-002',
         title: 'Teak Lounge Chair',
         description: [{
-            children:[{
-                text: 'Modern teak lounge chair with cushion',
+            type: 'paragraph',
+            children: [{
+                type: 'text',
+                text: 'Modern teak lounge chair with cushion. Ergonomic design meets timeless aesthetics.',
             }]
         }],
         price: 899,
-        PercentageDiscount: 15,
-        colour: 'Honey',
+        percentageDiscount: 15,
+        measurement: '70 x 80 x 85 cm',
+        stock: 25,
+        SKU: 'CHR-002',
+        colour: [{ name: 'Honey' }, { name: 'Natural' }],
         featuredImage: {
             id: 2,
             documentId: 'img-002',
             url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80',
         },
+        images: [
+            { id: 2, documentId: 'img-002', url: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80' },
+        ],
         product_category: { id: 2, documentId: 'cat-002', name: 'Seating', slug: 'seating' },
     },
     {
@@ -54,18 +71,26 @@ const dummyProducts: Product[] = [
         documentId: 'prod-003',
         title: 'Teak Coffee Table',
         description: [{
-            children:[{
-                text: 'Minimalist teak coffee table',
+            type: 'paragraph',
+            children: [{
+                type: 'text',
+                text: 'Minimalist teak coffee table with clean lines and functional design.',
             }]
         }],
         price: 749,
-        PercentageDiscount: 0,
-        colour: 'Dark Walnut',
+        percentageDiscount: 0,
+        measurement: '120 x 60 x 45 cm',
+        stock: 18,
+        SKU: 'TBL-003',
+        colour: [{ name: 'Dark Walnut' }],
         featuredImage: {
             id: 3,
             documentId: 'img-003',
             url: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=600&q=80',
         },
+        images: [
+            { id: 3, documentId: 'img-003', url: 'https://images.unsplash.com/photo-1532372320572-cda25653a26d?w=600&q=80' },
+        ],
         product_category: { id: 3, documentId: 'cat-003', name: 'Tables', slug: 'tables' },
     },
     {
@@ -73,18 +98,26 @@ const dummyProducts: Product[] = [
         documentId: 'prod-004',
         title: 'Teak Outdoor Bench',
         description: [{
-            children:[{
-                text: 'Weather-resistant outdoor bench',
+            type: 'paragraph',
+            children: [{
+                type: 'text',
+                text: 'Weather-resistant outdoor bench crafted from premium teak wood.',
             }]
         }],
         price: 1299,
-        PercentageDiscount: 10,
-        colour: 'Natural',
+        percentageDiscount: 10,
+        measurement: '150 x 50 x 85 cm',
+        stock: 8,
+        SKU: 'BNC-004',
+        colour: [{ name: 'Natural' }],
         featuredImage: {
             id: 4,
             documentId: 'img-004',
             url: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80',
         },
+        images: [
+            { id: 4, documentId: 'img-004', url: 'https://images.unsplash.com/photo-1506439773649-6e0eb8cfb237?w=600&q=80' },
+        ],
         product_category: { id: 4, documentId: 'cat-004', name: 'Outdoor', slug: 'outdoor' },
     },
 ];
@@ -102,7 +135,7 @@ const dummyHeroBlock: HeroBannerBlock = {
         isExternal: false,
         icon: {
             id: 1,
-            documentId: 'test', 
+            documentId: 'test',
             url: 'https://images.unsplash.com/photo-1618220179428-22790b461013?w=1920&q=80',
             alternativeText: 'null'
         }
@@ -119,14 +152,10 @@ const dummyBrandsBlock: BrandsBlock = {
     id: 2,
     title: 'As seen in',
     brands: [
-        //@ts-ignore
-        { id: 1, documentId: 'brand-001', name: 'Simple Life', logo: { id: 1, documentId: 'bl-1', url: '/brands/simple-life-logo-2.svg', alternativeText: 'null' } },
-        //@ts-ignore
-        { id: 2, documentId: 'brand-002', name: 'Rug Culture', logo: { id: 2, documentId: 'bl-2', url: '/brands/rug-culture-logo-2.svg', alternativeText: 'null' } },
-        //@ts-ignore
-        { id: 3, documentId: 'brand-003', name: 'iSleep', logo: { id: 3, documentId: 'bl-3', url: '/brands/isleep-logo-svg.svg', alternativeText: 'null' } },
-        //@ts-ignore
-        { id: 4, documentId: 'brand-004', name: 'Amercook', logo: { id: 4, documentId: 'bl-4', url: '/brands/amercook-logo-2.svg', alternativeText: 'null' } },
+        { id: 1, documentId: 'brand-001', name: 'Simple Life', logo: { id: 1, documentId: 'bl-1', url: '/brands/simple-life-logo-2.svg', alternativeText: 'Simple Life' } },
+        { id: 2, documentId: 'brand-002', name: 'Rug Culture', logo: { id: 2, documentId: 'bl-2', url: '/brands/rug-culture-logo-2.svg', alternativeText: 'Rug Culture' } },
+        { id: 3, documentId: 'brand-003', name: 'iSleep', logo: { id: 3, documentId: 'bl-3', url: '/brands/isleep-logo-svg.svg', alternativeText: 'iSleep' } },
+        { id: 4, documentId: 'brand-004', name: 'Amercook', logo: { id: 4, documentId: 'bl-4', url: '/brands/amercook-logo-2.svg', alternativeText: 'Amercook' } },
     ],
 };
 
@@ -143,15 +172,15 @@ const dummyAboutBlock: AboutBlock = {
     id: 4,
     title: 'Generations of Craftsmanship',
     subtitle: 'Our Story',
-    
+
     content: [
         {
-        children: [
-            {
-                text: 'At Teakworld, we believe that furniture should be more than just functional—it should be a legacy. Sourced from sustainable plantations and handcrafted by master artisans, each piece tells a story of tradition, durability, and natural beauty.',
-            }
-        ]
-    }
+            children: [
+                {
+                    text: 'At Teakworld, we believe that furniture should be more than just functional—it should be a legacy. Sourced from sustainable plantations and handcrafted by master artisans, each piece tells a story of tradition, durability, and natural beauty.',
+                }
+            ]
+        }
     ],
     image: {
         id: 5,

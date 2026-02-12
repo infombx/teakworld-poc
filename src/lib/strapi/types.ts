@@ -17,18 +17,19 @@ export interface Product {
     id: number;
     documentId: string;
     title: string;
-    description?: [
-        {
-            children: [
-                {
-                    text: string;
-                }
-            ]
-        }
-    ];
+    description?: {
+        type?: string;
+        children: {
+            type?: string;
+            text: string;
+        }[];
+    }[];
     price: number;
-    PercentageDiscount: number;
-    colour?: string;
+    percentageDiscount: number;
+    measurement?: string;
+    stock?: number;
+    SKU?: string;
+    colour?: { name: string }[];
     featuredImage?: StrapiImage;
     images?: StrapiImage[];
     product_category?: ProductCategory;
@@ -49,15 +50,6 @@ export interface Brand {
 }
 
 // Block Types
-export interface Brand {
-    id: number;
-    attributes: {
-        name: string;
-        logo: {
-            data: StrapiImage;
-        };
-    }
-}
 
 export interface Stat {
     id: number;

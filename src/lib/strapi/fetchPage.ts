@@ -16,7 +16,12 @@ export function getImageUrl(image?: StrapiImage): string {
         return image.url;
     }
 
-    // Otherwise, prepend Strapi URL
+    // Special case for local brand assets in dummy data
+    if (image.url.startsWith('/brands/')) {
+        return image.url;
+    }
+
+    // Otherwise, prepend Strapi URL (for Strapi uploads)
     return `${STRAPI_URL}${image.url}`;
 }
 

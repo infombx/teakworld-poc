@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 export interface CartItem {
+    cartId: string;
     documentId: string;
     title: string;
     price: number;
@@ -13,15 +14,16 @@ export interface CartItem {
 interface CartState {
     items: CartItem[];
     isOpen: boolean;
-    addItem: (item: Omit<CartItem, 'quantity'>) => void;
-    removeItem: (documentId: string) => void;
-    updateQuantity: (documentId: string, quantity: number) => void;
+    addItem: (item: Omit<CartItem, 'quantity' | 'cartId'> & { quantity?: number }) => void;
+    removeItem: (cartId: string) => void;
+    updateQuantity: (cartId: string, quantity: number) => void;
     clearCart: () => void;
     toggleSidebar: () => void;
     closeSidebar: () => void;
     openSidebar: () => void;
     getSubtotal: () => number;
     getItemCount: () => number;
+    getItemQuantity: (documentId: string, variant?: string) => number;
 }
 
 export const useCartStore = create<CartState>()(
@@ -32,39 +34,41 @@ export const useCartStore = create<CartState>()(
 
             addItem: (item) => {
                 const { items } = get();
-                const existingItem = items.find((i) => i.documentId === item.documentId);
+                const cartId = `${item.documentId}-${item.variant || 'default'}`;
+                const existingItem = items.find((i) => i.cartId === cartId);
+                const quantityToAdd = item.quantity || 1;
 
                 if (existingItem) {
                     set({
                         items: items.map((i) =>
-                            i.documentId === item.documentId
-                                ? { ...i, quantity: i.quantity + 1 }
+                            i.cartId === cartId
+                                ? { ...i, quantity: i.quantity + quantityToAdd }
                                 : i
                         ),
                         isOpen: true,
                     });
                 } else {
                     set({
-                        items: [...items, { ...item, quantity: 1 }],
+                        items: [...items, { ...item, cartId, quantity: quantityToAdd }],
                         isOpen: true,
                     });
                 }
             },
 
-            removeItem: (documentId) => {
+            removeItem: (cartId) => {
                 set({
-                    items: get().items.filter((i) => i.documentId !== documentId),
+                    items: get().items.filter((i) => i.cartId !== cartId),
                 });
             },
 
-            updateQuantity: (documentId, quantity) => {
+            updateQuantity: (cartId, quantity) => {
                 if (quantity <= 0) {
-                    get().removeItem(documentId);
+                    get().removeItem(cartId);
                     return;
                 }
                 set({
                     items: get().items.map((i) =>
-                        i.documentId === documentId ? { ...i, quantity } : i
+                        i.cartId === cartId ? { ...i, quantity } : i
                     ),
                 });
             },
@@ -81,9 +85,16 @@ export const useCartStore = create<CartState>()(
             getItemCount: () => {
                 return get().items.reduce((sum, item) => sum + item.quantity, 0);
             },
+
+            getItemQuantity: (documentId, variant) => {
+                const cartId = `${documentId}-${variant || 'default'}`;
+                const item = get().items.find((i) => i.cartId === cartId);
+                return item ? item.quantity : 0;
+            },
         }),
         {
             name: 'teakworld-cart',
+            version: 1,
         }
     )
 );
