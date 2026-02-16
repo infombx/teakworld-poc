@@ -36,7 +36,7 @@ export default function ProductCard({ product }: ProductCardProps) {
         : 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600&q=80';
 
     return (
-        <Link href={`/products/${product.documentId}`} className="group flex flex-col gap-4">
+        <Link href={`/products/${product.documentId}`} className="group flex flex-col gap-4 h-full">
             <div className="relative w-full aspect-[4/5] overflow-hidden rounded-xl bg-gray-100">
                 <Image
                     src={imageUrl}
@@ -80,12 +80,12 @@ export default function ProductCard({ product }: ProductCardProps) {
                 </div>
             </div>
 
-            <div className="flex flex-col gap-1">
-                <div className="flex justify-between items-start">
-                    <h3 className="text-primary text-lg font-bold hover:text-accent transition-colors font-display">
+            <div className="flex flex-col gap-1 min-h-[72px]">
+                <div className="flex justify-between items-start gap-2">
+                    <h3 className="text-primary text-lg font-bold hover:text-accent transition-colors font-display line-clamp-1">
                         {product.title}
                     </h3>
-                    <div className="text-right">
+                    <div className="text-right flex-shrink-0">
                         {discountedPrice ? (
                             <div className="flex items-center">
                                 <span className="text-primary font-semibold">MUR {discountedPrice.toLocaleString()}</span>
@@ -97,7 +97,7 @@ export default function ProductCard({ product }: ProductCardProps) {
                     </div>
                 </div>
                 {product.description && (
-                    <p className="text-text-sub text-sm">{product.description[0].children[0].text}</p>
+                    <p className="text-text-sub text-sm line-clamp-2">{product.description[0].children[0].text}</p>
                 )}
             </div>
         </Link>

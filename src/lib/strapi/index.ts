@@ -2,4 +2,5 @@
 export * from './types';
 export * from './fetchPage';
 export * from './populateBlocks';
+export * from './placeOrder';
 export { dummyHomePage, dummyShopPage, dummyProducts } from './dummyData';
